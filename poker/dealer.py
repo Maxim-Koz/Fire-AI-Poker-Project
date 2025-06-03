@@ -17,8 +17,15 @@ class Dealer():
         self.deck = deck()
         self.active_players = {player: True for player in self.players}
         self.pot = 0
-        self.current_bet = {player: 0 for player in self.players}
         self.player_money = player_money
+        self.current_bet = {
+            player: (
+                BIG_BLIND//2 if i == 0 else
+                BIG_BLIND if i == 1 else
+                0
+            )
+            for i, player in enumerate(self.players)
+        }
 
     def play(self):
 
@@ -46,21 +53,21 @@ class Dealer():
                     if move.action == 'fold':
                         self.active_players[player] = False
 
-                        if list(self.active_players.values()).count(False) == 1:
-                            return
+                        if list(self.active_players.values()).count(False) == 1: 
+                            return                             #TODO: handle end of game
                     elif move.action == 'call':
-                        last_move_amount = self.history.last_move.amount  # ! remember to make the last move not store folds
+                        last_move_amount = self.history.last_move.amount    #! remember to make the last move not store folds
                         if last_move_amount < self.player_money[player]:
                             self.player_money[player] -= (last_move_amount - self.current_bet[player])
                             self.current_bet[player] = last_move_amount
                         else:
                             self.current_bet[player] += self.player_money[
-                                player]  # ? should the player go all in, maybe there should be a warning for player.
+                                player]  #? should the player go all in, maybe there should be a warning for player.
                             self.player_money[player] = 0
 
                     elif move.action == 'raise':
                         raise_amount = move.amount
-                        if raise_amount < self.history.last_raise:  # ! remember if the last raise is not set, it will be the BIG_BLIND
+                        if raise_amount < self.history.last_raise:  #! remember if the last raise is not set, it will be the BIG_BLIND
                             pass  # TODO: handle invalid raise
                         elif raise_amount > self.player_money[player]:
                             pass  # TODO: handle invalid raise
@@ -71,5 +78,8 @@ class Dealer():
 
             for amount in self.current_bet.values():
                 self.pot += amount
+            
+        else:    # this means there will be a showdown between the remaining players
+            pass
                     
                             #TODO: handle end of game

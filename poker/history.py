@@ -1,15 +1,17 @@
+from . import Move
+
+class Player:
+    pass
+
 class History():
-    def __init__(self):
+
+    def add_move(self, move: Move):
         pass
 
-    def add_move(self, player, move):
-        pass
-
-    def last_move(self):
+    def last_move(self, move: Move):
         pass
 
     def last_raise(self):
         pass
 
-    
 
