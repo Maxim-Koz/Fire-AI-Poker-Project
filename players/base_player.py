@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from ..poker.history import History
+from ..poker.history import History  #type: ignore 
 
 # Abstract class for players so there is a standard interface all players must impliment
 class Player(ABC):

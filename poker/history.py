@@ -8,6 +8,7 @@ class History():
     def add_move(self, move: Move):
         pass
 
+    
     def last_move(self, move: Move):
         pass
 
