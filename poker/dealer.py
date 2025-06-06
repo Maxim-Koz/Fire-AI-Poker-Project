@@ -11,11 +11,12 @@ class Player:
 class Dealer:
     def __init__(self, players: Sequence[Player], player_money: dict[str, int], BIG_BLIND: int):
         self.BIG_BLIND: Final = BIG_BLIND
-        self.players = players                     #! remember players should be in the correct order
+        self.players = players         #! remember players should be in the correct order
+        self.player_count =  len(players)           
         self.history = History()
         self.deck = deck()
         self.active_players = {player: True for player in self.players}
-        self.pot = 0
+        self.pot: int = 0
         self.player_cards: dict = {}
         self.community_cards: list = []
         self.player_money = player_money
@@ -34,12 +35,12 @@ class Dealer:
             if round == 'preflop':
                 for player in self.players:
                     self.player_cards[player] = [self.deck[0], self.deck[1]] 
-                    player.hand(self.deck.pop(0), self.deck.pop(0))
+                    player.hand([self.deck.pop(0), self.deck.pop(0)])
                 self.history.last_move_amount = self.BIG_BLIND
             elif round == 'flop':
                 self.community_cards.extend(self.deck[0], self.deck[1], self.deck[2])
                 for player in self.players:
-                    player.flop(self.deck[0], self.deck[1], self.deck[2])
+                    player.flop([self.deck[0], self.deck[1], self.deck[2]])
                 del self.deck[:3]
                 self.history.last_move_amount = 0
             elif round == 'turn':
@@ -60,6 +61,7 @@ class Dealer:
                     move = Move(player.decision(self.history))
                     self.history.add_move(move)
                     if move.action == 'fold':
+                        self.player_count -= 1
                         self.active_players[player] = False
 
                         if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
@@ -102,13 +104,30 @@ class Dealer:
                 if self.active_players[player]:
                     if best_hand is None:
                         best_hand = self.player_cards[player] + self.community_cards
+                    elif any(isinstance(i, list) for i in best_hand):  
+                        potential_best_hand = self.showdown(best_hand[0], self.player_cards[player] + self.community_cards)
+                        if any(isinstance(i, list) for i in potential_best_hand):           
+                            best_hand.append(self.player_cards[player] + self.community_cards)
+                        else:
+                            best_hand = self.player_cards[player] + self.community_cards
                     else: 
                         best_hand = self.showdown(best_hand, self.player_cards[player] + self.community_cards)
+
+            if any(isinstance(i, list) for i in best_hand):  # if there are multiple best hands, handles draws
+                player_count = len(best_hand)
+                player_winnings = self.pot // player_count
+                winning_cards = []
+                for hand in best_hand:
+                    winning_cards.extend(x for x in hand not in self.community_cards)
+                for player in self.players:
+                    if self.player_cards[player] in winning_cards:
+                        player.draw(player_winnings)
+                return
 
             winner_cards = [x for x in best_hand if x not in self.community_cards]
 
             winner = next(k for k, v in self.player_cards.items() if v == winner_cards)
-            winner.win(self.pot)
+            winner.win(self.pot)  
             return
 
         
@@ -119,7 +138,7 @@ class Dealer:
         suits = [card.suit for card in hand] 
         return ranks, suits 
     
-    def is_straight(self, ranks: Sequence[int]) -> bool:
+    def is_straight(self, ranks: Sequence[int]) -> bool: 
         dif = 0
         for i in range(len(ranks)):
             if i !=0 and ranks[i] - ranks[i-1] != 1:
@@ -183,4 +202,4 @@ class Dealer:
             elif max(ranks2) > max(ranks1):
                 return hand2
             else:
-                return None
+                return [hand1, hand2]
