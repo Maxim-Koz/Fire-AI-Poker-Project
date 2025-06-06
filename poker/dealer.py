@@ -19,6 +19,7 @@ class Dealer:
         self.pot: int = 0
         self.player_cards: dict = {}
         self.community_cards: list = []
+        self.last_error = None
         self.player_money = player_money
         self.current_bet = {     
             player: (
@@ -58,38 +59,48 @@ class Dealer:
             
             for player in self.players[2:]+ self.players[:2]:  # rotate players so that the player after the big blind is always first 
                 if self.active_players[player]:
-                    move = Move(player.decision(self.history))
-                    self.history.add_move(move)
-                    if move.action == 'fold':
-                        self.player_count -= 1
-                        self.active_players[player] = False
-
-                        if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
-
-                            for amount in self.current_bet.values():
-                                self.pot += amount
-                            player.win(self.pot)         
-                            return
-                        
-                    elif move.action == 'call':
-                        if self.history.last_move_amount < self.player_money[player]:
-                            self.player_money[player] -= (self.history.last_move_amount - self.current_bet[player])
-                            self.current_bet[player] = self.history.last_move_amount
-                            self.history.last_move_amount = self.current_bet[player]
+                    while True:
+                        if self.last_error != None:
+                            move = Move(player.decision(self.history))
+                            self.history.overwrite_last_move(move)
                         else:
-                            self.current_bet[player] += self.player_money[player]     #? should the player go all in, maybe there should be a warning for player.
-                            self.player_money[player] = 0
+                            move = Move(player.decision(self.history))
+                            self.history.add_move(move)
+                        if move.action == 'fold':
+                            self.player_count -= 1
+                            self.active_players[player] = False
 
-                    elif move.action == 'raise':
-                        raise_amount = move.amount
-                        if raise_amount < self.history.last_raise:       #! remember if the last raise is not set, it will be the BIG_BLIND
-                            player.handle_error("Raise amount must be same or greater than the last raise.")
-                        elif raise_amount > self.player_money[player]:
-                            player.handle_error("Raise amount cannot be greater than the player's money.")         #! remember to impliment more safeguards in the UI
-                        else:
-                            self.player_money[player] -= raise_amount
-                            self.current_bet[player] += raise_amount
-                            self.history.last_raise = raise_amount
+                            if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
+
+                                for amount in self.current_bet.values():
+                                    self.pot += amount
+                                player.win(self.pot)         
+                                return
+                            break
+                            
+                        elif move.action == 'call':
+                            if self.history.last_move_amount < self.player_money[player]:
+                                self.player_money[player] -= (self.history.last_move_amount - self.current_bet[player])
+                                self.current_bet[player] = self.history.last_move_amount
+                                self.history.last_move_amount = self.current_bet[player]
+                            else:
+                                self.current_bet[player] += self.player_money[player]     #? should the player go all in, maybe there should be a warning for player.
+                                self.player_money[player] = 0
+                            break
+
+                        elif move.action == 'raise':
+                            raise_amount = move.amount
+                            if raise_amount < self.history.last_raise:       # last_raise will be BIG_BLIND if no raises have been made yet
+                                player.handle_error("Raise amount must be same or greater than the last raise.")
+                                continue
+                            elif raise_amount > self.player_money[player]:
+                                player.handle_error("Raise amount cannot be greater than the player's money.")         #! remember to impliment more safeguards in the UI
+                                continue
+                            else:
+                                self.player_money[player] -= raise_amount
+                                self.current_bet[player] += raise_amount
+                                self.history.last_raise = raise_amount
+                                break
 
             for amount in self.current_bet.values():
                 self.pot += amount

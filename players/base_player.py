@@ -4,7 +4,7 @@ from poker.history import History
 from poker import Card, Move       
 
 # Abstract class for players so there is a standard interface all players must impliment
-class Player(ABC):
+class BasePlayer(ABC):
 
     @abstractmethod
     def decision(self, history: History) -> Move:
@@ -15,7 +15,7 @@ class Player(ABC):
         pass
 
     @abstractmethod
-    def flop(self, cards:Collection[Card]):
+    def flop(self, cards: Collection[Card]):
         pass
 
     @abstractmethod
