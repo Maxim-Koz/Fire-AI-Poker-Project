@@ -1,20 +1,31 @@
-from typing import Final
-from .base_player import BasePlayer
-from poker import Move
+from typing import Final 
+from players.base_player import BasePlayer
+from poker import Move, Action
 import random
 
 class RandomPlayer(BasePlayer):
-    def __init__(self, starting_money: int, name: str, BIG_BLIND: int):
+    def __init__(self, name: str, starting_money: int, BIG_BLIND: int):
+        self.error = None
         self.money = starting_money
         self.name = name
         self.BIG_BLIND: Final= BIG_BLIND 
 
     def decision(self, history) -> Move:
-        actions = ['fold', 'call', 'raise']
-        action = random.sample(actions, 1)[0]
-        while True:
-            if action == 'fold':
-                return Move(self, action, )
+
+        actions = [Action.FOLD, Action.CALL, Action.RAISE]  
+        if self.error is not None:
+            actions.remove(Action.RAISE)  
+        
+        action = random.choice(actions)    
+        if action == Action.FOLD:
+            return Move(self, action, 0)
+        elif action == Action.CALL:
+            return Move(self, action, history.last_move_amount)  # dealer will handle the amount 
+        elif action == Action.RAISE:
+            raise_amount = random.randint(history.last_raise, self.money)
+            return Move(self, action, raise_amount)
+                
+            
 
 
     def hand(self, cards):
@@ -35,5 +46,5 @@ class RandomPlayer(BasePlayer):
     def draw(self, amount):
         self.money += amount
 
-    def handle_error(self, error):
+    def handle_error(self, error: str):
         self.error = error

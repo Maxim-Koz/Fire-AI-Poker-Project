@@ -1,5 +1,7 @@
 from enum import Enum
+from players.base_player import BasePlayer
 import random
+
 
 # Enumarations used to represent the suits and ranks of a standard deck of 
 # and makes it easier to iterate over them.
@@ -38,16 +40,18 @@ class Action(Enum):
     FOLD = 'fold'
     CALL = 'call'
     RAISE = 'raise'
-    
-class Move():
-    __slots__ = ('action', 'amount')
 
-    def __init__(self, action: Action, amount: int):
+class Move():
+    __slots__ = ('player', 'action', 'amount')
+
+    def __init__(self, player: BasePlayer, action: Action, amount: int):
+        self.player = player
         self.action = action
         self.amount = amount
     
     def __repr__(self):
         return f"{self.action.value}{self.amount.value}"
+
 
 def deck():
     all_cards = []
@@ -56,3 +60,4 @@ def deck():
             all_cards.append(Card(rank, suit))
     random.shuffle(all_cards)  
     return all_cards
+
