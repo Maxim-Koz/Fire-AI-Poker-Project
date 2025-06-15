@@ -1,18 +1,18 @@
 from . import Move
-
-class Player:
-    pass
-
 class History():
 
+    def __init__(self, BIG_BLIND: int):
+        self.moves = []                     #store all moves made in the game
+        self.last_move_amount = 0
+        self.last_raise = BIG_BLIND
+
     def add_move(self, move: Move):
-        pass
+        self.moves.append(move)
 
-    
-    def last_move(self, move: Move):
-        pass
+    def overwrite_last_move(self, move: Move): # overwrite the last move made in the history
+        self.moves[-1] = move
 
-    def last_raise(self):
-        pass
+
+
 
 
