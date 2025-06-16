@@ -5,7 +5,6 @@ import random
 
 class RandomPlayer(BasePlayer):
     def __init__(self, name: str, starting_money: int, BIG_BLIND: int):
-        self.error = None
         self.money = starting_money
         self.name = name
         self.BIG_BLIND: Final= BIG_BLIND 
@@ -13,9 +12,6 @@ class RandomPlayer(BasePlayer):
     def decision(self, history) -> Move:
 
         actions = [Action.FOLD, Action.CALL, Action.RAISE]  
-        if self.error is not None:
-            actions.remove(Action.RAISE)  
-        
         action = random.choice(actions)    
         if action == Action.FOLD:
             return Move(self, action, 0)

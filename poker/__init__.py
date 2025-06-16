@@ -32,8 +32,8 @@ class Card():
     def __init__(self, rank: Rank, suit: Suit):
         self.rank = rank
         self.suit = suit
-
-    def __repr__(self):
+    
+    def __str__(self):
         return f"{self.rank.value}{self.suit.value}"
 
 class Action(Enum):
@@ -49,7 +49,7 @@ class Move():
         self.action = action
         self.amount = amount
     
-    def __repr__(self):
+    def __str__(self):
         return f"{self.action.value}{self.amount.value}"
 
 
