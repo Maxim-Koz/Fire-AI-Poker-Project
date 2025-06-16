@@ -2,16 +2,15 @@ from typing import Sequence, Final, Collection
 from . import deck, Card, Move, Rank
 from .history import History
 from collections import Counter
-from players.base_player import BasePlayer as Player
+from .players.base_player import BasePlayer as Player
 
 
 class Dealer:
     def __init__(self, player_money: dict[Player, int], BIG_BLIND: int):   
         self.player_money = player_money
-        assert len(self.players_money) >= 2, "At least two players are required to play poker."  #! remember player_money should be in the correct order
-        self.BIG_BLIND: Final = BIG_BLIND              
-        self.player_count =  len(self.player_money)           
-        self.history = History()
+        assert len(self.player_money) >= 2, "At least two players are required to play poker."  #! remember player_money should be in the correct order
+        self.BIG_BLIND: Final = BIG_BLIND                        
+        self.history = History(BIG_BLIND)
         self.deck = deck()
         self.active_players = {player: True for player in self.player_money}
         self.end_round = False
@@ -24,8 +23,9 @@ class Dealer:
                 BIG_BLIND if i == 1 else
                 0
             )
-            for i, player in enumerate(self.players)
+            for i, player in enumerate(self.player_money)
         }
+        
 
     def play(self):
 
@@ -66,7 +66,6 @@ class Dealer:
                             move = Move(player.decision(self.history))
                             self.history.add_move(move)
                         if move.action == 'fold':
-                            self.player_count -= 1
                             self.active_players[player] = False
 
                             if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
@@ -89,9 +88,18 @@ class Dealer:
                                 self.player_money[player] -= (self.history.last_move_amount - self.current_bet[player])
                                 self.current_bet[player] = self.history.last_move_amount
                                 self.history.last_move_amount = self.current_bet[player]
-                            else:
-                                self.current_bet[player] += self.player_money[player]     #? should the player go all in, maybe there should be a warning for player.
-                                self.player_money[player] = 0
+                            else:            #! makes the player fold, need to impliment all in 
+                                self.active_players[player] = False
+
+                            if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
+
+                                for amount in self.current_bet.values():
+                                    self.pot += amount
+
+                                for player in self.player_money:
+                                    if self.active_players[player]:
+                                        player.win(self.pot)
+                                        return
 
                             if len(set(self.player_money.values())) == 1:
                                 self.end_round = True
@@ -102,7 +110,7 @@ class Dealer:
                             if raise_amount < self.history.last_raise:   # last_raise will be BIG_BLIND if no raises have been made yet
                                 raise ValueError("Raise amount must be greater or equal to the last raise amount.")  
                             
-                            elif (raise_amount + self.history.last_move_amount) - self.current_bet[player] > self.player_money[player]:
+                            elif (raise_amount + self.history.last_move_amount) - self.current_bet[player] >= self.player_money[player]:
                                 raise ValueError("Raise amount cannot be greater than the player's remaining money.")
 
                             else:
@@ -110,42 +118,40 @@ class Dealer:
                                 self.current_bet[player] = raise_amount + self.history.last_move_amount
                                 self.history.last_raise = raise_amount
 
-            for amount in self.current_bet.values():
-                self.pot += amount
+                for amount in self.current_bet.values():
+                    self.pot += amount
 
-            self.current_bet = {player: 0 for player in self.players}  # reset the current bet for the next round
+                self.current_bet = {player: 0 for player in self.players}  # reset the current bet for the next round
 
-            if self.end_round:
-                break
+                if self.end_round:
+                    break
             
         else:          # this means there will be a showdown between the remaining players
-            best_hand = None
+            best_hands  = []
 
-            for player in self.players:
+            for player in self.player_money:
                 if self.active_players[player]:
-                    if best_hand is None:
-                        best_hand = self.player_cards[player] + self.community_cards
-                    elif any(isinstance(i, list) for i in best_hand):  
-                        potential_best_hand = self.showdown(best_hand[0], self.player_cards[player] + self.community_cards)
-                        if any(isinstance(i, list) for i in potential_best_hand):           
-                            best_hand.append(self.player_cards[player] + self.community_cards)
-                        else:
-                            best_hand = self.player_cards[player] + self.community_cards
-                    else: 
-                        best_hand = self.showdown(best_hand, self.player_cards[player] + self.community_cards)
+                    if len(best_hands) == 0:
+                        best_hands.append(self.player_cards[player] + self.community_cards)
+                    elif len(best_hands) > 0:  
+                        potential_best_hands  = self.showdown(best_hands[0], self.player_cards[player] + self.community_cards)
+                        if len(potential_best_hands) > 1:  # if there are multiple best hands, handles draws           
+                            best_hands.append(self.player_cards[player] + self.community_cards)
+                        elif potential_best_hands == [self.player_cards[player] + self.community_cards]:  # if the current hand is better than the previous best hand
+                            best_hands = [self.player_cards[player] + self.community_cards]
 
-            if any(isinstance(i, list) for i in best_hand):  # if there are multiple best hands, handles draws #!fix
-                player_count = len(best_hand)
+            if len(best_hands) > 1:  # if there are multiple best hands, handles draws  #! add all in
+                player_count = len(best_hands)
                 player_winnings = self.pot // player_count
                 winning_cards = []
-                for hand in best_hand:
+                for hand in best_hands:
                     winning_cards.extend(x for x in hand not in self.community_cards)
                 for player in self.players:
                     if self.player_cards[player] in winning_cards:
                         player.draw(player_winnings)
                 return
 
-            winner_cards = [x for x in best_hand if x not in self.community_cards]
+            winner_cards = [x for x in best_hands[0] if x not in self.community_cards]
 
             winner = next(k for k, v in self.player_cards.items() if v == winner_cards)
             winner.win(self.pot)  
@@ -219,8 +225,8 @@ class Dealer:
             ranks2, _ = self.parse_hand(hand2)
             
             if max(ranks1) > max(ranks2):
-                return hand1
+                return [hand1]
             elif max(ranks2) > max(ranks1):
-                return hand2
+                return [hand2]
             else:
                 return [hand1, hand2]

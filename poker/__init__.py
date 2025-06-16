@@ -1,5 +1,5 @@
 from enum import Enum
-from players.base_player import BasePlayer
+from .players.base_player import BasePlayer
 import random
 
 

@@ -1,5 +1,5 @@
 from typing import Final 
-from players.base_player import BasePlayer
+from .base_player import BasePlayer
 from poker import Move, Action
 import random
 
@@ -46,5 +46,4 @@ class RandomPlayer(BasePlayer):
     def draw(self, amount):
         self.money += amount
 
-    def handle_error(self, error: str):
-        self.error = error
+

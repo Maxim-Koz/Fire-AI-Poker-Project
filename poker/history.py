@@ -2,7 +2,7 @@ from . import Move
 class History():
 
     def __init__(self, BIG_BLIND: int):
-        self.moves = []                     #store all moves made in the game
+        self.moves: list[Move] = []                     #store all moves made in the game
         self.last_move_amount = 0
         self.last_raise = BIG_BLIND
 
