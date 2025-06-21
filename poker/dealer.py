@@ -3,10 +3,13 @@ from . import deck, Card, Move, Rank
 from .history import History
 from collections import Counter
 from .players.base_player import BasePlayer as Player
+import logging
 
+logger = logging.getLogger(__name__)
 
 class Dealer:
     def __init__(self, player_money: dict[Player, int], BIG_BLIND: int):   
+        logger.info(f"Initializing dealer with big blind: {BIG_BLIND} and no. players: {len(player_money)}")
         self.player_money = player_money
         assert len(self.player_money) >= 2, "At least two players are required to play poker."  #! remember player_money should be in the correct order
         self.BIG_BLIND: Final = BIG_BLIND                        
@@ -31,23 +34,27 @@ class Dealer:
 
         for round in ('preflop', 'flop', 'turn', 'river'):
             if round == 'preflop':
+                logger.info("Dealing preflop cards")
                 for player in self.player_money:
                     self.player_cards[player] = [self.deck[0], self.deck[1]]
                     player.hand([self.deck.pop(0), self.deck.pop(0)])
                 self.history.last_move_amount = self.BIG_BLIND
             elif round == 'flop':
+                logger.info("Dealing flop cards")
                 self.community_cards.extend(self.deck[0], self.deck[1], self.deck[2])
                 for player in self.player_money:
                     player.flop([self.deck[0], self.deck[1], self.deck[2]])
                 del self.deck[:3]
                 self.history.last_move_amount = 0
             elif round == 'turn':
+                logger.info("Dealing turn card")
                 self.community_cards.append(self.deck[0])
                 for player in self.player_money:
                     player.turn(self.deck[0])
                 del self.deck[0]
                 self.history.last_move_amount = 0
             elif round == 'river':
+                logger.info("Dealing river card")
                 self.community_cards.append(self.deck[0])
                 for player in self.player_money:
                     player.river(self.deck[0])
@@ -58,17 +65,15 @@ class Dealer:
 
             while True:
                 for player in list(self.player_money)[2:]+ list(self.player_money)[:2]:  # rotate players so that the player after the big blind is always first 
-                    if self.active_players[player]:
-                        if self.last_error != None:
-                            move = Move(player.decision(self.history))
-                            self.history.overwrite_last_move(move)
-                        else:
-                            move = Move(player.decision(self.history))
-                            self.history.add_move(move)
-                        if move.action == 'fold':
+                    if self.active_players[player]:  
+                        move = Move(player.decision(self.history))
+                        if move.action == 'fold': 
                             self.active_players[player] = False
-
+                            logger.info(f"{player.name} folded, remaining players: {list(self.active_players.values()).count(True)}")
+                            
                             if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
+                                
+                                logger.info(f"one player left, ending round")
 
                                 for amount in self.current_bet.values():
                                     self.pot += amount
@@ -84,33 +89,42 @@ class Dealer:
                                 break
                             
                         elif move.action == 'call':
+                            logger.info(f"{player.name} called with amount: {self.history.last_move_amount}")
                             if self.history.last_move_amount < self.player_money[player]:
                                 self.player_money[player] -= (self.history.last_move_amount - self.current_bet[player])
                                 self.current_bet[player] = self.history.last_move_amount
                                 self.history.last_move_amount = self.current_bet[player]
                             else:            #! makes the player fold, need to impliment all in 
+
+                                logger.warning(f"{player.name} does not have enough money to call, folding")
+
                                 self.active_players[player] = False
 
-                            if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
+                                if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
 
-                                for amount in self.current_bet.values():
-                                    self.pot += amount
+                                    logger.info(f"one player left, ending round")
 
-                                for player in self.player_money:
-                                    if self.active_players[player]:
-                                        player.win(self.pot)
-                                        return
+                                    for amount in self.current_bet.values():
+                                        self.pot += amount
+
+                                    for player in self.player_money:
+                                        if self.active_players[player]:
+                                            player.win(self.pot)
+                                            return
 
                             if len(set(self.player_money.values())) == 1:
                                 self.end_round = True
                                 break
 
                         elif move.action == 'raise':
+                            logger.info(f"{player.name} raised amount: {move.amount}, last move amount: {self.history.last_move_amount}")
                             raise_amount = move.amount  
                             if raise_amount < self.history.last_raise:   # last_raise will be BIG_BLIND if no raises have been made yet
+                                logger.error("Raise amount must be greater than the last raise amount.")
                                 raise ValueError("Raise amount must be greater or equal to the last raise amount.")  
                             
                             elif (raise_amount + self.history.last_move_amount) - self.current_bet[player] >= self.player_money[player]:
+                                logger.error("Raise amount cannot be greater than the player's remaining money.")
                                 raise ValueError("Raise amount cannot be greater than the player's remaining money.")
 
                             else:
@@ -127,6 +141,8 @@ class Dealer:
                     break
             
         else:          # this means there will be a showdown between the remaining players
+            logger.info("Showdown initiated, evaluating hands")
+
             best_hands  = []
 
             for player in self.player_money:
@@ -141,6 +157,7 @@ class Dealer:
                             best_hands = [self.player_cards[player] + self.community_cards]
 
             if len(best_hands) > 1:  # if there are multiple best hands, handles draws  #! add all in
+                winners = []
                 player_count = len(best_hands)
                 player_winnings = self.pot // player_count
                 winning_cards = []
@@ -149,11 +166,14 @@ class Dealer:
                 for player in self.players:
                     if self.player_cards[player] in winning_cards:
                         player.draw(player_winnings)
+                        winners.append(player)
+                logger.info(f"Multiple winners: {', '.join(player.name for player in winners)}")
                 return
 
             winner_cards = [x for x in best_hands[0] if x not in self.community_cards]
 
             winner = next(k for k, v in self.player_cards.items() if v == winner_cards)
+            logger.info(f"winner is {winner.name}")
             winner.win(self.pot)  
             return
 
