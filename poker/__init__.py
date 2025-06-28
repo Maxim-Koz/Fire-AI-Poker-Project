@@ -1,5 +1,4 @@
 from enum import Enum
-from .players.base_player import BasePlayer
 import random
 
 
@@ -34,7 +33,7 @@ class Card():
         self.suit = suit
     
     def __str__(self):
-        return f"{self.rank.value}{self.suit.value}"
+        return f"{self.rank.value} of {self.suit.value}"
 
 class Action(Enum):
     FOLD = 'fold'
@@ -44,7 +43,7 @@ class Action(Enum):
 class Move():
     __slots__ = ('player', 'action', 'amount')
 
-    def __init__(self, player: BasePlayer, action: Action, amount: int):
+    def __init__(self, player, action: Action, amount: int):
         self.player = player
         self.action = action
         self.amount = amount

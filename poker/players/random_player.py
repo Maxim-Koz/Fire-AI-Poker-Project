@@ -11,7 +11,7 @@ class RandomPlayer(BasePlayer):
 
     def decision(self, history) -> Move:
 
-        actions = [Action.FOLD, Action.CALL, Action.RAISE]  
+        actions = [ Action.CALL]
         action = random.choice(actions)    
         if action == Action.FOLD:
             return Move(self, action, 0)
@@ -35,6 +35,9 @@ class RandomPlayer(BasePlayer):
 
     def river(self, card):
         pass
+
+    def placed_bet(self, amount):
+        self.money -= amount
 
     def win(self, amount):
         self.money += amount

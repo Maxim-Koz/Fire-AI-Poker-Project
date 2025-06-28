@@ -27,14 +27,14 @@ class BasePlayer(ABC):
         pass
 
     @abstractmethod
+    def placed_bet(self,amount: int):
+        pass
+
+    @abstractmethod
     def win(self, amount: int):
         pass
 
     @abstractmethod
     def draw(self, amount: int):
-        pass
-
-    @abstractmethod
-    def handle_error(self, error: str):
         pass
 
