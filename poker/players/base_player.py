@@ -5,6 +5,10 @@ from poker import Card, Move
 
 # Abstract class for players so there is a standard interface all players must impliment
 class BasePlayer(ABC):
+    @property
+    @abstractmethod
+    def name(self) -> str:
+        pass
 
     @abstractmethod
     def decision(self, history: History) -> Move:
@@ -32,9 +36,5 @@ class BasePlayer(ABC):
 
     @abstractmethod
     def win(self, amount: int):
-        pass
-
-    @abstractmethod
-    def draw(self, amount: int):
         pass
 

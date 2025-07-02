@@ -1,8 +1,9 @@
 from typing import Sequence, Final, Collection, List, Tuple
 from . import deck, Card, Rank, Action, Suit
 from .history import History
-from collections import Counter
+from .poker_logic import showdown
 from .players.base_player import BasePlayer as Player
+from.round_iterator import RoundIterator
 import logging
 import logging.config
 import json
@@ -17,9 +18,10 @@ logger = logging.getLogger(__name__)
 class Dealer:
     def __init__(self, player_money: dict[Player, int], BIG_BLIND: int):   
         logger.info(f"Initializing dealer with big blind: {BIG_BLIND} and no. players: {len(player_money)}")
-        self.player_money = player_money
-        assert len(self.player_money) >= 2, "At least two players are required to play poker."  #! remember player_money should be in the correct order
-        self.BIG_BLIND: Final = BIG_BLIND                        
+        self.player_money = player_money               #! remember player_money should be in the correct order
+        assert len(self.player_money) >= 2, "At least two players are required to play poker."  
+        self.BIG_BLIND: Final = BIG_BLIND      
+        self.one_player_left = False                  
         self.history = History(BIG_BLIND)
         self.deck = deck()
         self.active_players = {player: True for player in self.player_money}
@@ -55,89 +57,7 @@ class Dealer:
                     player.hand([card1, card2])
                 self.history.last_move_amount = self.BIG_BLIND
 
-                while True:
-                    for player in list(self.player_money)[2:]+ list(self.player_money)[:2]:  # rotate players so that the player after the big blind is always first when it is the preflop round
-                        if self.active_players[player]:  
-                            move = player.decision(self.history)
-                            logger.info(f"{player.name} made a move: {move.action}, current bet: {self.current_bet[player]}")
-                            logger.info(f"pot : {self.pot}")
-                            self.players_asked += 1
-                            if move.action == Action.FOLD: 
-                                self.active_players[player] = False
-                                logger.info(f"{player.name} folded, remaining players: {list(self.active_players.values()).count(True)}")
-                                
-                                if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
-                                    
-                                    logger.info(f"one player left, ending round")
-
-                                    for amount in self.current_bet.values():
-                                        self.pot += amount
-                                    
-
-                                    for player in self.player_money:
-                                        if self.active_players[player]:
-                                            player.win(self.pot)
-                                            return
-                                
-                                bets = [self.current_bet[p] for p in self.player_money if self.active_players[p]]
-                                if (len(set(bets)) == 1) and (self.players_asked == len(self.active_players)):  
-                                    self.end_round = True
-                                    break
-                                
-                            elif move.action == Action.CALL:
-                                logger.info(f"{player.name} called ")
-                                if self.history.last_move_amount < self.player_money[player]:
-                                    player.placed_bet((self.history.last_move_amount - self.current_bet[player]))
-                                    logger.info(f"{player.name} placed bet: {self.history.last_move_amount - self.current_bet[player]}")
-                                    self.player_money[player] -= (self.history.last_move_amount - self.current_bet[player])
-                                    self.current_bet[player] = self.history.last_move_amount
-                                    self.history.last_move_amount = self.current_bet[player]
-                                else:            #! makes the player fold, need to impliment all in 
-
-                                    logger.warning(f"{player.name} does not have enough money to call, folding")
-
-                                    self.active_players[player] = False
-
-                                    if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
-
-                                        logger.info(f"one player left, ending round")
-
-                                        for amount in self.current_bet.values():
-                                            self.pot += amount
-
-                                        for player in self.player_money:
-                                            if self.active_players[player]:
-                                                player.win(self.pot)
-                                                return
-
-                                bets = [self.current_bet[p] for p in self.player_money if self.active_players[p]]
-                                if (len(set(bets)) == 1) and (self.players_asked == len(self.active_players)):  
-                                    self.end_round = True
-                                    break
-
-                            elif move.action == Action.RAISE:
-                                logger.info(f"{player.name} raised amount: {move.amount}, last move amount: {self.history.last_move_amount}")
-                                raise_amount = move.amount  
-                                if raise_amount < self.history.last_raise:   # last_raise will be BIG_BLIND if no raises have been made yet
-                                    logger.error("Raise amount must be greater than the last raise amount.")
-                                    raise ValueError("Raise amount must be greater or equal to the last raise amount.")  
-                                
-                                elif (raise_amount + self.history.last_move_amount) - self.current_bet[player] >= self.player_money[player]:
-                                    logger.error("Raise amount cannot be greater than the player's remaining money.")
-                                    raise ValueError("Raise amount cannot be greater than the player's remaining money.")
-
-                                else:
-                                    self.player_money[player] -= (raise_amount + self.history.last_move_amount) - self.current_bet[player]
-                                    self.current_bet[player] = raise_amount + self.history.last_move_amount
-                                    self.history.last_raise = raise_amount
-
-                    for amount in self.current_bet.values():
-                        self.pot += amount
-
-                    self.current_bet = {player: 0 for player in self.player_money}  # reset the current bet for the next round
-
-                    if self.end_round:
-                        break
+                self.round(list(self.player_money)[2:]+ list(self.player_money)[:2]) # start the round with the players after the big blind and small blind
 
             elif round == 'flop':
                 self.players_asked = 0
@@ -167,92 +87,14 @@ class Dealer:
             self.end_round = False
 
             if round != 'preflop':  
-                while True:
-                    for player in list(self.player_money):
-                        if self.active_players[player]:  
-                            move = player.decision(self.history)
-                            logger.info(f"{player.name} made a move: {move.action}, current bet: {self.current_bet[player]}")
-                            logger.info(f"pot : {self.pot}")
-                            self.players_asked += 1
-                            if move.action == Action.FOLD: 
-                                self.active_players[player] = False
-                                logger.info(f"{player.name} folded, remaining players: {list(self.active_players.values()).count(True)}")
-                                
-                                if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
-                                    
-                                    logger.info(f"one player left, ending round")
-
-                                    for amount in self.current_bet.values():
-                                        self.pot += amount
-                                    
-
-                                    for player in self.player_money:
-                                        if self.active_players[player]:
-                                            player.win(self.pot)
-                                            return
-                                
-                                if len(set(self.player_money.values())) == 1:
-                                    self.end_round = True
-                                    break
-                                
-                            elif move.action == Action.CALL:
-                                logger.info(f"{player.name} called with amount: {self.history.last_move_amount}")
-                                if self.history.last_move_amount < self.player_money[player]:
-                                    player.placed_bet((self.history.last_move_amount - self.current_bet[player]))
-                                    self.player_money[player] -= (self.history.last_move_amount - self.current_bet[player])
-                                    self.current_bet[player] = self.history.last_move_amount
-                                    self.history.last_move_amount = self.current_bet[player]
-                                else:            #! makes the player fold, need to impliment all in 
-
-                                    logger.warning(f"{player.name} does not have enough money to call, folding")
-
-                                    self.active_players[player] = False
-
-                                    if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
-
-                                        logger.info(f"one player left, ending round")
-
-                                        for amount in self.current_bet.values():
-                                            self.pot += amount
-
-                                        for player in self.player_money:
-                                            if self.active_players[player]:
-                                                player.win(self.pot)
-                                                return
-
-                                bets = [self.current_bet[p] for p in self.player_money if self.active_players[p]]
-                                if (len(set(bets)) == 1) and (self.players_asked == len(self.active_players)):  
-                                    self.end_round = True
-                                    break
-
-                            elif move.action == Action.RAISE:
-                                logger.info(f"{player.name} raised amount: {move.amount}, last move amount: {self.history.last_move_amount}")
-                                raise_amount = move.amount  
-                                if raise_amount < self.history.last_raise:   # last_raise will be BIG_BLIND if no raises have been made yet
-                                    logger.error("Raise amount must be greater than the last raise amount.")
-                                    raise ValueError("Raise amount must be greater or equal to the last raise amount.")  
-                                
-                                elif (raise_amount + self.history.last_move_amount) - self.current_bet[player] >= self.player_money[player]:
-                                    logger.error("Raise amount cannot be greater than the player's remaining money.")
-                                    raise ValueError("Raise amount cannot be greater than the player's remaining money.")
-
-                                else:
-                                    self.player_money[player] -= (raise_amount + self.history.last_move_amount) - self.current_bet[player]
-                                    self.current_bet[player] = raise_amount + self.history.last_move_amount
-                                    self.history.last_raise = raise_amount
-
-                    for amount in self.current_bet.values():
-                        self.pot += amount
-
-                    self.current_bet = {player: 0 for player in self.player_money}  # reset the current bet for the next round
-
-                    if self.end_round:
-                        break
+                self.round(list(self.player_money))
             
         else:          # this means there will be a showdown between the remaining players
             logger.info("Showdown initiated, evaluating hands")
             logger.info(f"Community card: {self.community_cards[0]}, {self.community_cards[1]}, {self.community_cards[2]}, {self.community_cards[3]}, {self.community_cards[4]}")
+            return showdown()  #TODO: workout which players to add ass parameters and stuff like that
 
+            '''
             best_hands  = []
 
             for player in self.player_money:
@@ -275,6 +117,7 @@ class Dealer:
                     winning_cards.extend(x for x in hand if x not in self.community_cards)
                 for player in self.player_money:
                     if self.player_cards[player] in winning_cards:
+                        self.player_money[player] += player_winnings
                         player.draw(player_winnings)
                         winners.append(player)
                 logger.info("Draw")
@@ -288,91 +131,100 @@ class Dealer:
             logger.info(f"winner is {winner.name}")
             winner.win(self.pot)  
             logger.info(f"{self.player_money.values()}")
-            return
+            return'''
 
-        
-        
-    def parse_hand(self, hand: Collection[Card]) -> Tuple[List[int], List[Suit]] :
-        RANK_ORDER = {rank: i for i, rank in enumerate(Rank, start=2)}  # mapping ranks to their order, starting from 2
-        ranks = sorted((RANK_ORDER[card.rank] for card in hand), reverse=True)
-        suits = [card.suit for card in hand] 
-        return ranks, suits 
     
-    def is_straight(self, ranks: Sequence[int]) -> bool: 
-        dif = 0
-        for i in range(len(ranks)):
-            if i !=0 and ranks[i] != ranks[i-1] - 1:
-                dif += 1
+    def to_pot_transaction(self, player: Player, amount: int):
+        player.placed_bet(amount)
+        self.player_money[player] -= amount
+        self.current_bet[player] += amount
+        logger.info(f"{player.name} placed bet of {amount}, remaining money: {self.player_money[player]}")
 
-        if dif == 4 or ranks == [14, 5, 4, 3, 2]:
-            return True
-        else:
-            return False
+    def to_player_transaction(self, player: Player, amount: int):
+        player.win(amount)
+        self.player_money[player] += amount
+        self.current_bet[player] -= amount
+        logger.info(f"{player.name} won {amount}, current money: {self.player_money[player]}")
         
-    def most_common_rank(self, ranks: List[int]) -> Tuple[int, List[int]]:   
+    def round(self, players: List[Player]):
+        round_iterator = RoundIterator(players)      # will iterate over the players in the round, until all players have either folded or called the same amount
+        for player in round_iterator:
+            if self.active_players[player]:  
+                move = player.decision(self.history)
+                logger.info(f"{(player.name)} made a move: {move.action}, current bet: {self.current_bet[player]}")
+                logger.info(f"pot : {self.pot}")
+                if move.action == Action.FOLD: 
+                    self.active_players[player] = False
+                    logger.info(f"{player.name} folded, remaining players: {list(self.active_players.values()).count(True)}")
+                    
+                    if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
+                        
+                        logger.info(f"one player left, ending round")
 
-        rank_counts = Counter(ranks)
-        max_rank_frequency = max(rank_counts.values())
+                        for amount in self.current_bet.values():
+                            self.pot += amount 
+                        
 
-        #find all values with that frequency
-        most_common_ranks = [rank for rank, count in rank_counts.items() if count == max_rank_frequency]
+                        for player in self.player_money:
+                            if self.active_players[player]:
+                                player.win(self.pot)
+                                return
+                            
+                    bets = [self.current_bet[p] for p in self.player_money if self.active_players[p]]  
+                    if (len(set(bets)) == 1) and (self.players_asked == sum(self.active_players.values())):          
+                        round_iterator.running = False  # this means all players have folded, so we can end the round
+                    
+                elif move.action == Action.CALL:
+                    self.players_asked += 1
+                    logger.info(f"{player.name} called with amount: {self.history.last_move_amount}")
+                    if self.history.last_move_amount < self.player_money[player]:
+                        player.placed_bet((self.history.last_move_amount - self.current_bet[player]))
+                        self.player_money[player] -= (self.history.last_move_amount - self.current_bet[player])
+                        self.current_bet[player] = self.history.last_move_amount
+                        self.history.last_move_amount = self.current_bet[player]
+                    else:            #! makes the player fold, need to impliment all in 
 
-        return max_rank_frequency, most_common_ranks
-    
+                        logger.warning(f"{player.name} does not have enough money to call, folding")
 
-    def evaluate_hand(self, hand: Collection[Card]) -> int:
-        #gives value based on hand rating, higher is better
+                        self.active_players[player] = False
 
-        ranks, suits = self.parse_hand(hand)
-        max_rank_frequency, most_common_ranks = self.most_common_rank(ranks)
+                        if list(self.active_players.values()).count(True) == 1:  # this means only one player is left
 
+                            logger.info(f"one player left, ending round")
 
-        if len(set(suits)) == 1 and self.is_straight(ranks): #straight flush
-            logger.info("Straight flush detected")
-            return 8
-        if max_rank_frequency == 4: # four of a kind
-            logger.info("Four of a kind detected")
-            return 7
-        if (ranks.count(ranks[0]) == 3 and ranks.count(ranks[4]) == 2) or (ranks.count(ranks[0]) == 2 and ranks.count(ranks[4]) == 3): # full house
-            logger.info("Full house detected")
-            return 6
-        if len(set(suits)) == 1: # flush
-            logger.info("Flush detected")
-            return 5
-        if self.is_straight(ranks): # straight
-            logger.info("Straight detected")
-            return 4
-        if max_rank_frequency == 3: # three of a kind
-            logger.info("Three of a kind detected")
-            return 3
-        if max_rank_frequency == 2 and len(most_common_ranks) == 2: # two pair
-            logger.info("Two pair detected")
-            return 2
-        if max_rank_frequency == 2: # one pair
-            logger.info("One pair detected")
-            return 1
-        logger.info("High card detected")
-        return 0 
-    
-    def showdown(self, hand1: Collection[Card], hand2: Collection[Card]):
-        value1 = self.evaluate_hand(hand1)
-        logger.info(f"Evaluating hand 1, value: {value1}")
-        value2 = self.evaluate_hand(hand2)
-        logger.info(f"Evaluating hand 2, value: {value2}")
+                            for amount in self.current_bet.values():
+                                self.pot += amount
 
-        if value1 > value2:
-            return [hand1]
-        elif value2 > value1:
-            return [hand2]
-        else:
-            ranks1, _ = self.parse_hand(hand1)
-            ranks2, _ = self.parse_hand(hand2)
-            ranks1 = ranks1[:5]
-            ranks2 = ranks2[:5]
-            logger.info(f"Both hands have the same value, comparing ranks: {ranks1} vs {ranks2}")
-            compare_high_cards = ranks1 if ranks1 > ranks2 else ranks2 if ranks1 < ranks2 else "equal"
-            if compare_high_cards == "equal":
-                logger.info("Both hands have the same high card, it's a draw")
-                return [hand1, hand2]
-            else:
-                return [hand1] if ranks1 > ranks2 else [hand2]
+                            for player in self.player_money:
+                                if self.active_players[player]:
+                                    player.win(self.pot)
+                                    self.one_player_left = True
+                                    return
+
+                    bets = [self.current_bet[p] for p in self.player_money if self.active_players[p]]  
+                    if (len(set(bets)) == 1) and (self.players_asked == sum(self.active_players.values())):  
+                        round_iterator.running = False  # this means all players have called the same amount, so we can end the round
+
+                elif move.action == Action.RAISE:
+                    self.players_asked += 1
+                    logger.info(f"{player.name} raised amount: {move.amount}, last move amount: {self.history.last_move_amount}")
+                    raise_amount = move.amount  
+                    if raise_amount < self.history.last_raise:   # last_raise will be BIG_BLIND if no raises have been made yet
+                        logger.error("Raise amount must be greater than the last raise amount.")
+                        raise ValueError("Raise amount must be greater or equal to the last raise amount.")  
+                    
+                    elif (raise_amount + self.history.last_move_amount) - self.current_bet[player] >= self.player_money[player]:
+                        logger.error("Raise amount cannot be greater than the player's remaining money.")
+                        raise ValueError("Raise amount cannot be greater than the player's remaining money.")
+
+                    else:
+                        self.to_pot_transaction(player, raise_amount + self.history.last_move_amount - self.current_bet[player])
+                        '''
+                        self.player_money[player] -= (raise_amount + self.history.last_move_amount) - self.current_bet[player]
+                        self.current_bet[player] = raise_amount + self.history.last_move_amount'''
+                        self.history.last_raise = raise_amount
+
+        for amount in self.current_bet.values():
+            self.pot += amount
+
+        self.current_bet = {player: 0 for player in self.player_money}  # reset the current bet for the next round

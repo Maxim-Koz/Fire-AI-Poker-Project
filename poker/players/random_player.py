@@ -6,7 +6,7 @@ import random
 class RandomPlayer(BasePlayer):
     def __init__(self, name: str, starting_money: int, BIG_BLIND: int):
         self.money = starting_money
-        self.name = name
+        self._name = name
         self.BIG_BLIND: Final= BIG_BLIND 
 
     def decision(self, history) -> Move:
@@ -20,9 +20,10 @@ class RandomPlayer(BasePlayer):
         elif action == Action.RAISE:
             raise_amount = random.randint(history.last_raise, self.money)
             return Move(self, action, raise_amount)
-                
-            
-
+    
+    @property
+    def name(self):
+        return self._name
 
     def hand(self, cards):
         pass
@@ -40,9 +41,6 @@ class RandomPlayer(BasePlayer):
         self.money -= amount
 
     def win(self, amount):
-        self.money += amount
-
-    def draw(self, amount):
         self.money += amount
 
 
