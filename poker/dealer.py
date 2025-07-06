@@ -1,5 +1,5 @@
-from typing import Dict, Final, Collection, List, Tuple
-from . import deck, Card, Rank, Action, Suit
+from typing import Dict, Final, Collection, List
+from . import deck, Card, Action
 from .history import History
 from .poker_logic import showdown
 from .players.base_player import BasePlayer as Player
@@ -25,12 +25,12 @@ class Dealer:
         self.play_end = False                
         self.history = History(BIG_BLIND)
         self.winners: Dict[Player, List[Card]] = {}
-        self.deck = deck()
-        self.active_players = {player: True for player in self.player_money}
-        self.players_asked = 0
-        self.pot: int = 0
+        self.deck = deck() 
+        self.active_players = {player: True for player in self.player_money} 
+        self.players_asked = 0 
+        self.pot: int = 0 
         self.player_cards: dict = {}
-        self.community_cards: list = []
+        self.community_cards: list = [] 
         self.current_bet = {player: 0 for player in self.player_money}
         
 
@@ -79,7 +79,7 @@ class Dealer:
             self.history.last_move_amount = 0
         else:
             self.players_asked = 0
-            card1 = self.deck[0]
+            card1 = self.deck.pop(0)
             self.community_cards.append(card1)
             for player in self.player_money:
                 player.turn(card1)
@@ -175,7 +175,7 @@ class Dealer:
         self.player_money[player] += amount
         self.current_bet[player] -= amount
         self.pot -= amount
-        logger.info(f"{player.name} won {amount}, current money: {self.player_money[player]}")
+        logger.info(f"{player.name} won {amount}")
 
     def round_end(self) -> bool:
         if self.one_player_left or self.play_end: 
@@ -199,6 +199,9 @@ class Dealer:
             for player in self.player_money:
                 if not(self.active_players[player]):
                     player.loose(self.winners)
+            
+            for player in self.player_money:
+                logger.info(f"{player.name} finished game with {self.player_money[player]}")
             
             return True
         return False

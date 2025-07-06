@@ -2,7 +2,7 @@ from typing import Collection
 
 class RoundIterator:
     def __init__(self, players: Collection):
-        self.players = players
+        self.players = list(players)
         self.current_index = 0
         self.running = True
 
@@ -12,9 +12,7 @@ class RoundIterator:
     def __next__(self):
         if not self.running:
             raise StopIteration
-        index = self.current_index
         
-        if self.current_index == (len(self.players) - 1):  # if we reached the end of the list, we start over
-            self.current_index = 0
-
-        return self.players[index]
+        player = self.players[self.current_index]
+        self.current_index = (self.current_index + 1) % len(self.players)
+        return player
