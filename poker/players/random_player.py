@@ -44,3 +44,5 @@ class RandomPlayer(BasePlayer):
         self.money += amount
 
 
+    def loose(self, winning_players_cards):
+        pass

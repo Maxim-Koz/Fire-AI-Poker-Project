@@ -34,3 +34,6 @@ class RandomPlayer(BasePlayer):
     def win(self, amount):
         self.money += amount
         print(f"{self.name} wins {amount}. Current money: {self.money}, money won: {amount}, change in money: {amount - self.money_given}")
+
+    def loose(self, players, winning_cards):
+        pass

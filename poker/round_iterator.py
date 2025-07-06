@@ -1,7 +1,7 @@
-from typing import List
+from typing import Collection
 
 class RoundIterator:
-    def __init__(self, players: List):
+    def __init__(self, players: Collection):
         self.players = players
         self.current_index = 0
         self.running = True

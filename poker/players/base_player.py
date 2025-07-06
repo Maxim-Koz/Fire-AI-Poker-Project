@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Collection
+from typing import Collection, Dict
 from poker.history import History  
 from poker import Card, Move       
 
@@ -38,3 +38,6 @@ class BasePlayer(ABC):
     def win(self, amount: int):
         pass
 
+    @abstractmethod
+    def loose(self, winning_players_cards: Dict):
+        pass
