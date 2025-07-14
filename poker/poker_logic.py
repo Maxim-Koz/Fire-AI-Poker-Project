@@ -35,7 +35,7 @@ def showdown(hands: Dict[Player, List[Card]]) -> Dict[Player, List[Card]]: #hand
             winners[player] = five_card_hands[player]
         else:
             first_hand = next(iter(winners.values()))
-            winner = tie_breaker(five_card_hands[player], first_hand)
+            winner = tie_breaker(five_card_hands[player], first_hand, max_score)
             if [five_card_hands[player]] == winner:
                 winners = {player: five_card_hands[player]}
             elif [five_card_hands[player], first_hand] == winner:
@@ -64,10 +64,58 @@ def final_hand(index: List[int], ranks, suits, RANK_ORDER: Dict):
 
 def parse_hand(hand: Collection[Card]) -> Tuple[Dict, List[int], List[Suit]]:
         RANK_ORDER = {rank: i for i, rank in enumerate(Rank, start=2)}  # mapping ranks to their order, starting from 2
-        sorted_hand = sorted(hand, key=lambda card: RANK_ORDER[card.rank], reverse=True)#sort hand by rank
+        sorted_hand = sorted(hand, key=lambda card: RANK_ORDER[card.rank], reverse=True) # sort hand by rank
         ranks = [RANK_ORDER[card.rank] for card in sorted_hand]
         suits = [card.suit for card in sorted_hand] 
         return RANK_ORDER, ranks, suits 
+
+def is_straight_flush(ranks: List[int], suits: List[Suit]) -> Tuple[bool, List[int]]: 
+    is_it_straight, id_straight = is_straight(ranks)
+    is_it_flush, id_flush = is_flush(suits)
+    if not is_it_straight or not is_it_flush:
+        return False, [0]
+    if id_flush == id_straight:
+        logger.info("straight flush")
+        return True, id_flush
+    
+    unique_ranks = list(dict.fromkeys(ranks)) #finds all unique ranks, in order
+    all_possible_straights = []
+    all_possible_flushes = []
+
+    #finds all possible straights
+    num_iterations = len(unique_ranks) - 4
+    for i in range(num_iterations):
+        potential_straight = unique_ranks[i:i+5] 
+        dif = 0
+        indexed_hand = []
+        for k in range(4):
+            if potential_straight[k] == potential_straight[k+1] + 1:
+                dif += 1
+        if dif == 4:
+            for rank in potential_straight:
+                for rank_id in range(len(ranks)):
+                    if ranks[rank_id] == rank:
+                        indexed_hand.append(rank_id)
+                        break
+            all_possible_straights.append(indexed_hand) # this all the possible straights from best to worst
+
+    #finds all possible flushes
+    suits_counter = Counter(suits)
+    for suit in suits_counter:
+        if suits_counter[suit] >= 5:
+            indexed_hand = []
+            for suit_id in range(7): # 7 is the len(suit)
+                indexed_hand.append(suit_id)
+            all_possible_flushes.append(indexed_hand) 
+    
+    for straight_id in all_possible_straights:
+        for flush_id in all_possible_flushes:
+            if straight_id == flush_id: # if straight and flush have the same index, we have a straight flush
+                logger.info("straight flush")
+                return True, straight_id
+    return False, [0]
+
+
     
 def is_straight(ranks: List[int]) -> Tuple[bool, List[int]]: 
     unique_ranks = list(dict.fromkeys(ranks)) #finds all unique ranks, in order
@@ -102,9 +150,11 @@ def is_straight(ranks: List[int]) -> Tuple[bool, List[int]]:
 def is_flush(suits: List[Suit]) -> Tuple[bool, List[int]]:
     indexed_hand = []
     suit_counter = Counter(suits)
-    if suit_counter.most_common(1)[0][1] == 5:
+    if suit_counter.most_common(1)[0][1] >= 5:
+        count = 0
         for suit_index in range(len(suits)):
-            if suits[suit_index] == suit_counter.most_common(1)[0][0]:
+            if suits[suit_index] == suit_counter.most_common(1)[0][0] and count < 5:
+                count += 1
                 indexed_hand.append(suit_index)
         logger.info("flush")
         return True, indexed_hand
@@ -128,54 +178,43 @@ def is_four_of_a_kind(ranks: List[int], rank_counter) -> Tuple[bool, List[int]]:
 
 
 def is_full_house(ranks: List[int], rank_counter) -> Tuple[bool, List[int]]:  
-    if rank_counter.most_common(1)[0][1] == 3:
-        cards = []
-        most_common_rank = rank_counter.most_common(1)[0][0]
-        if rank_counter.most_common(2)[1][1] == 2:
-            if len(rank_counter) == 4:
-                for i in range(len(ranks)):
-                    if ranks[i] == most_common_rank or ranks[i] == rank_counter.most_common(2)[1][0]:
-                        cards.append(i)
-                logger.info("full house")
-                return True, cards
-            else:
-                rank1 = list(rank_counter)[1]
-                rank2 = list(rank_counter)[2]
-                if rank1 > rank2:
-                    for i in range(len(ranks)):
-                        if ranks[i] == most_common_rank or ranks[i] == rank1:
-                            cards.append(i)
-                    logger.info("full house")
-                    return True, cards
-                else:
-                    for i in range(len(ranks)):
-                        if ranks[i] == most_common_rank or ranks[i] == rank2:
-                            cards.append(i)
-                    logger.info("full house")
-                    return True, cards
-        elif rank_counter.most_common(2)[1][1] == 3:
-            count = 0
-            rank1 = list(rank_counter)[0]
-            rank2 = list(rank_counter)[1]
-            if rank1 > rank2:
-                for i in range(len(ranks)):
-                    if ranks[i] == rank1:
-                        cards.append(i)
-                    elif ranks[i] == rank2 and count <= 1:
-                        count += 1
-                        cards.append(i)
-                logger.info("full house")
-                return True, cards
-            else:
-                for i in range(len(ranks)):
-                    if ranks[i] == rank2:
-                        cards.append(i)
-                    elif ranks[i] == rank1 and count <= 1:
-                        count += 1
-                        cards.append(i)
-                logger.info("full house")
-                return True, cards
-    return False, [0]
+    trips = [rank for rank, count in rank_counter.items() if count >= 3]
+    pairs = [rank for rank, count in rank_counter.items() if count >= 2]
+
+    if not trips or len(pairs) < 2 and (len(trips) == 1 and trips[0] not in pairs):
+        return False, [0]
+
+    trips.sort(reverse=True)
+    pairs.sort(reverse=True)
+
+    # Choose best triplet
+    trip_rank = trips[0]
+
+    if trip_rank in pairs:
+        pairs.remove(trip_rank)
+
+    if not pairs:
+        return False, [0]
+
+    pair_rank = pairs[0]
+
+    # Collect indices of full house
+    cards = []
+    trip_count = 0
+    pair_count = 0
+
+    for i, rank in enumerate(ranks):
+        if rank == trip_rank and trip_count < 3:
+            cards.append(i)
+            trip_count += 1
+        elif rank == pair_rank and pair_count < 2:
+            cards.append(i)
+            pair_count += 1
+        if len(cards) == 5:
+            break
+
+    logger.info(f"full house")
+    return True, cards
     
 
 def is_three_of_a_kind(ranks: List[int], rank_counter) -> Tuple[bool, List[int]]:
@@ -230,9 +269,9 @@ def evaluate_hand( hand: List[Card]) -> Tuple[int, List[Card]]:
 
     is_it_flush, indexed_flush = is_flush(suits)
     is_it_straight, indexed_straight = is_straight(ranks)
-    if is_it_flush and is_it_straight and indexed_flush == indexed_straight: #straight flush 
-        logger.info("straight flush")
-        return 8, final_hand(indexed_straight, ranks, suits, RANK_ORDER)
+    is_it_straight_flush, indexed_straight_flush = is_straight_flush(ranks, suits)
+    if is_it_straight_flush: #straight flush
+        return 8, final_hand(indexed_straight_flush, ranks, suits, RANK_ORDER)
     
     is_it_foak, indexed_foak = is_four_of_a_kind(ranks, rank_counter)
     if is_it_foak: # four of a kind 
@@ -263,13 +302,100 @@ def evaluate_hand( hand: List[Card]) -> Tuple[int, List[Card]]:
     return 0, final_hand([0,1,2,3,4], ranks, suits, RANK_ORDER)
 
 
-def tie_breaker(hand1: List[Card], hand2: List[Card]) -> List[List[Card]]:
+def tie_breaker(hand1: List[Card], hand2: List[Card], score: int) -> List[List[Card]]:
     logger.info("starting tie break")
     _, ranks1, _ = parse_hand(hand1)
     _, ranks2, _= parse_hand(hand2)
+    ranks1_counter = Counter(ranks1)
+    ranks2_counter = Counter(ranks2)
+    if score == 8: # straight flush
+        if ranks1 > ranks2:
+            return [hand1]
+        elif ranks2 > ranks1:
+            return [hand2]
+    elif score == 7: # four of a kind
+        quad1 = ranks1_counter.most_common(1)[0][0]
+        kicker1 = ranks1_counter.most_common(2)[1][0]
+        quad2 = ranks2_counter.most_common(1)[0][0]
+        kicker2 = ranks2_counter.most_common(2)[1][0]
+        if quad1 > quad2:
+            return [hand1]
+        elif quad2 > quad1:
+            return [hand2]
+        elif kicker1 > kicker2:
+            return [hand1]
+        elif kicker2 > kicker1:
+            return [hand2]
+    elif score == 6: # full house
+        trips1 = ranks1_counter.most_common(1)[0][0]
+        pair1 = ranks1_counter.most_common(2)[1][0]
+        trips2 = ranks2_counter.most_common(1)[0][0]
+        pair2 = ranks2_counter.most_common(2)[1][0]
+        if trips1 > trips2:
+            return [hand1]
+        elif trips2 > trips1:
+            return [hand2]
+        elif pair1 > pair2:
+            return [hand1]
+        elif pair2 > pair1:
+            return [hand2]
+    elif score == 5: # flush
+        if ranks1 > ranks2:
+            return [hand1]
+        elif ranks2 > ranks1:
+            return [hand2]
+    elif score == 4: # straight
+        if ranks1 > ranks2:
+            return [hand1]
+        elif ranks2 > ranks1:
+            return [hand2]
+    elif score == 3: # three of a kind
+        trip1 = ranks1_counter.most_common(1)[0][0]
+        kickers1 = [rank for rank, count in ranks1_counter.items() if count < 3]
+        kickers1 = sorted(kickers1, reverse=True)
+        trip2 = ranks2_counter.most_common(1)[0][0]
+        kickers2 = [rank for rank, count in ranks2_counter.items() if count < 3]
+        kickers2 = sorted(kickers2, reverse=True)
+        if trip1 > trip2:
+            return [hand1]
+        elif trip2 > trip1:
+            return [hand2]
+        elif kickers1 > kickers2:
+            return [hand1]
+        elif kickers2 > kickers1:
+            return [hand2]
+    elif score == 2: # two pair
+        pairs1 = [rank for rank, count in ranks1_counter.items() if count == 2]
+        pairs1 = sorted(pairs1, reverse=True)
+        kicker1 = ranks1_counter.most_common(2)[1][0]
+        pairs2 = [rank for rank, count in ranks2_counter.items() if count == 2]
+        pairs2 = sorted(pairs2, reverse=True)
+        kicker2 = ranks2_counter.most_common(2)[1][0]
+        if pairs1 > pairs2:
+            return [hand1]
+        elif pairs2 > pairs1:
+            return [hand2] 
+        elif kicker1 > kicker2:
+            return [hand1]
+        elif kicker2 > kicker1:
+            return [hand2]
+    elif score == 1: # one pair
+        pair1 = ranks1_counter.most_common(1)[0][0]
+        kickers1 = [rank for rank, count in ranks1_counter.items() if count == 1]
+        kickers1 = sorted(kickers1, reverse=True)
+        pair2 = ranks2_counter.most_common(1)[0][0]
+        kickers2 = [rank for rank, count in ranks2_counter.items() if count == 1]
+        kickers2 = sorted(kickers2, reverse=True)
+        if pair1 > pair2:
+            return [hand1]
+        elif pair2 > pair1:
+            return [hand2]
+        elif kickers1 > kickers2:
+            return [hand1]
+        elif kickers2 > kickers1:
+            return [hand2]
     if ranks1 > ranks2:
         return [hand1]
     elif ranks2 > ranks1:
         return [hand2]
-    else:
-        return [hand1, hand2]
+    return [hand1, hand2]
