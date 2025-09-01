@@ -1,5 +1,6 @@
 from poker.dealer import Dealer
 from poker.players.random_player import RandomPlayer
+ #TODO: make logs folder if not made already
 
 random_player1 = RandomPlayer("Player 1", 100, 2)
 random_player2 = RandomPlayer("Player 2", 100, 2)
