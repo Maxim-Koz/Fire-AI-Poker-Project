@@ -1,4 +1,5 @@
 from typing import Dict, Final, Collection, List
+import numpy as np
 from . import deck, Card, Action
 from .history import History
 from .poker_logic import showdown
@@ -176,6 +177,7 @@ class Dealer:
         self.current_bet[player] -= amount
         self.pot -= amount
         logger.info(f"{player.name} won {amount}")
+        
 
     def round_end(self) -> bool:
         if self.one_player_left or self.play_end: 

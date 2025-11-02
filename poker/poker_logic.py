@@ -2,6 +2,7 @@ from typing import Dict, List, Collection, Tuple
 from poker.players.base_player import BasePlayer as Player
 from collections import Counter
 from . import Card, Suit, Rank
+from .hand_encoding import parse_hand
 import logging
 import logging.config
 import json
@@ -42,7 +43,7 @@ def showdown(hands: Dict[Player, List[Card]]) -> Dict[Player, List[Card]]: #hand
                 winners[player] = five_card_hands[player]
     return winners
 
-def make_card(ranks: List[Rank], suits: List[Suit]) -> List[Card]:
+def make_card(ranks: List[Rank], suits: List[Suit]) -> List[Card]: # creates a list of 5 cards from ranks and suits
     hand = []
     for id in range(5):
         hand.append(Card(ranks[id], suits[id]))
@@ -57,17 +58,10 @@ def create_rns_list(index, ranks, suits, RANK_ORDER: Dict) -> Tuple[List[Rank], 
         suit_cards.append(suits[card_index])
     return rank_cards, suit_cards
 
-def final_hand(index: List[int], ranks, suits, RANK_ORDER: Dict):
+def final_hand(index: List[int], ranks, suits, RANK_ORDER: Dict): 
     rank_cards, suit_cards = create_rns_list(index, ranks, suits, RANK_ORDER)
     player_hand = make_card(rank_cards, suit_cards)
     return player_hand
-
-def parse_hand(hand: Collection[Card]) -> Tuple[Dict, List[int], List[Suit]]:
-        RANK_ORDER = {rank: i for i, rank in enumerate(Rank, start=2)}  # mapping ranks to their order, starting from 2
-        sorted_hand = sorted(hand, key=lambda card: RANK_ORDER[card.rank], reverse=True) # sort hand by rank
-        ranks = [RANK_ORDER[card.rank] for card in sorted_hand]
-        suits = [card.suit for card in sorted_hand] 
-        return RANK_ORDER, ranks, suits 
 
 def is_straight_flush(ranks: List[int], suits: List[Suit]) -> Tuple[bool, List[int]]: 
     is_it_straight, id_straight = is_straight(ranks)

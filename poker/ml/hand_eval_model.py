@@ -1,7 +1,7 @@
 import tensorflow as tf   #type: ignore
 from tensorflow.keras import layers, models  #type: ignore
 import numpy as np
-from . import Card, Rank, Suit
+from poker import Card, Rank, Suit
 
 # Define model
 model = models.Sequential([
