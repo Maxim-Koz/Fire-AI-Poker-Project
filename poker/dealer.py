@@ -88,7 +88,7 @@ class Dealer:
 
         round_iterator = RoundIterator(players)      # will iterate over the players in the round, until all players have either folded or called the same amount
         for player in round_iterator:
-            if self.active_players[player]:  
+            if self.active_players[player]: 
                 move = player.decision(self.history)
                 logger.info(f"{(player.name)} made a move: {move.action}, current bet: {self.current_bet[player]}")
                 logger.info(f"pot : {self.pot}")

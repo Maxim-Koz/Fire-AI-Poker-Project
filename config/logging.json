@@ -21,7 +21,15 @@
             "class": "logging.handlers.RotatingFileHandler",
             "level": "DEBUG",
             "formatter": "detailed",
-            "filename": "logs/aipoker.log", 
+            "filename": "logs/game_loop.log", 
+            "maxBytes": 1000000,
+            "backupCount": 3
+        },
+        "hand_eval_file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "INFO",
+            "formatter": "detailed",
+            "filename": "logs/hand_model_training.log", 
             "maxBytes": 1000000,
             "backupCount": 3
         }
@@ -32,5 +40,14 @@
             "stderr",
             "file"
         ]   
+    },
+    "loggers": {
+        "hand_eval_model": {
+            "level": "INFO",
+            "handlers": [
+                "hand_eval_file"
+            ],
+            "propagate": false
+        }
     }
 }

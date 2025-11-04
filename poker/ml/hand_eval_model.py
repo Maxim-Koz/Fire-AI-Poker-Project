@@ -1,41 +1,43 @@
 import tensorflow as tf   #type: ignore
-from tensorflow.keras import layers, models  #type: ignore
-import numpy as np
-from poker import Card, Rank, Suit
+from tensorflow.keras import layers, models #type: ignore
+import logging
+import logging.config
+import json
 
-# Define model
-model = models.Sequential([
-    layers.Input(shape=(364,)),            # input vector (hole + community)
-    layers.Dense(256, activation='relu'),
-    layers.Dense(128, activation='relu'),
-    layers.Dense(64, activation='relu'),
-    layers.Dense(1, activation='sigmoid')  # output: win probability
-])
+with open('config/logging.json', 'r') as f:
+    log_config = json.load(f)
+logging.config.dictConfig(log_config)
 
-model.compile(optimizer='adam',
-              loss='binary_crossentropy',
-              metrics=['accuracy'])
+logger = logging.getLogger('hand_eval_model')
 
-def card_to_index(card: Card) -> int:
-    # Define ordering for ranks and suits
-    ranks = [Rank.TWO, Rank.THREE, Rank.FOUR, Rank.FIVE, Rank.SIX, Rank.SEVEN,
-             Rank.EIGHT, Rank.NINE, Rank.TEN, Rank.JACK, Rank.QUEEN, Rank.KING, Rank.ACE]
-    suits = [Suit.SPADES, Suit.HEARTS, Suit.DIAMONDS, Suit.CLUBS]
+def build_model():
+    """
+    Builds a neural network to predict win probability
+    given an encoded hand (hole + community cards).
+    """
 
-    rank_index = ranks.index(card.rank)   # 0-12
-    suit_index = suits.index(card.suit)   # 0-3
+    logger.info("Building model...")
 
-    return rank_index * 4 + suit_index
+    model = models.Sequential([
+        # Input layer expects 364 values (7 * 52 one-hot encoding)
+        layers.Input(shape=(364,)),
 
+        # Hidden layers learn non-linear relationships between cards and outcomes
+        layers.Dense(256, activation='relu'),
+        layers.Dense(128, activation='relu'),
+        layers.Dense(64, activation='relu'),
 
-def encode_hand(hole_cards: list[Card], board_cards: list[Card]) -> np.ndarray:
-    num_slots = 7
-    vec = np.zeros(num_slots * 52)
+        # Output layer gives a single probability between 0 and 1
+        layers.Dense(1, activation='sigmoid')
+    ])
 
-    all_cards = hole_cards + board_cards
-    for i, card in enumerate(all_cards):
-        idx = card_to_index(card)
-        slot_start = i * 52
-        vec[slot_start + idx] = 1.0
+    # Compile the model with optimizer, loss, and metrics
+    model.compile(
+        optimizer='adam',
+        loss='binary_crossentropy',
+        metrics=['accuracy']
+    )
 
-    return vec
+    logger.info("Model built successfully.")
+
+    return model

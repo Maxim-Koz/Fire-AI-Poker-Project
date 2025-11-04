@@ -3,7 +3,7 @@ from .base_player import BasePlayer
 from poker import Move, Action
 import random
 
-class RandomPlayer(BasePlayer):
+class CheckPlayer(BasePlayer):
     def __init__(self, name: str, starting_money: int, BIG_BLIND: int):
         self.money = starting_money
         self._name = name
