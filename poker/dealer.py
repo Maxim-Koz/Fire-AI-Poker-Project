@@ -1,5 +1,4 @@
 from typing import Dict, Final, Collection, List
-import numpy as np
 from . import deck, Card, Action
 from .history import History
 from .poker_logic import showdown
@@ -19,7 +18,7 @@ logger = logging.getLogger(__name__)
 class Dealer:
     def __init__(self, player_money: dict[Player, int], BIG_BLIND: int):   
         logger.info(f"Initializing dealer with big blind: {BIG_BLIND} and no. players: {len(player_money)}")
-        self.player_money = player_money               #! remember player_money should be in the correct order
+        self.player_money = player_money               #! remember player_money should be in the order that players are sitting around the table
         assert len(self.player_money) >= 2, "At least two players are required to play poker."  
         self.BIG_BLIND: Final = BIG_BLIND      
         self.one_player_left = False  

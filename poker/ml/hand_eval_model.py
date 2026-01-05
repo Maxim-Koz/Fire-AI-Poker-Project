@@ -10,7 +10,7 @@ logging.config.dictConfig(log_config)
 
 logger = logging.getLogger('hand_eval_model')
 
-def build_model():
+def build_model() -> tf.keras.Model:
     """
     Builds a neural network to predict win probability
     given an encoded hand (hole + community cards).
@@ -24,6 +24,7 @@ def build_model():
 
         # Hidden layers learn non-linear relationships between cards and outcomes
         layers.Dense(256, activation='relu'),
+        layers.Dense(160, activation='relu'),
         layers.Dense(128, activation='relu'),
         layers.Dense(64, activation='relu'),
 
