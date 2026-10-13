@@ -897,3 +897,54 @@
 2026-10-14 00:17:38,698 | INFO [poker.dealer] | dealer.py: line 304 - 1 won 0
 2026-10-14 00:17:38,698 | INFO [poker.dealer] | dealer.py: line 358 - 1 finished game with 402
 2026-10-14 00:17:38,698 | INFO [poker.dealer] | dealer.py: line 358 - 2 finished game with 398
+2026-10-14 00:27:13,401 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-10-14 00:27:13,887 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-10-14 00:27:13,887 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-10-14 00:27:13,887 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-10-14 00:27:13,888 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-10-14 00:27:23,081 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-10-14 00:27:23,893 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 23333
+2026-10-14 00:27:23,894 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 23332
+2026-10-14 00:27:23,894 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-10-14 00:27:23,894 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 7 of H, A of D
+2026-10-14 00:27:23,894 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: 9 of C, A of C
+2026-10-14 00:27:26,373 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 2
+2026-10-14 00:27:26,373 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 23332
+2026-10-14 00:27:26,373 | INFO [__main__] | main.py: line 613 - Player You called 1. History: You CALL 1
+2026-10-14 00:27:26,595 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.6303, raise amount: 14705
+2026-10-14 00:27:26,595 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 14705
+2026-10-14 00:27:26,595 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 14705, remaining money: 8627
+2026-10-14 00:27:26,595 | INFO [__main__] | main.py: line 549 - Bot Bot raised 14705. History: You CALL 1 → Bot RAISE 14705
+2026-10-14 00:27:28,416 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 14707
+2026-10-14 00:27:28,416 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 14705, remaining money: 8627
+2026-10-14 00:27:28,416 | INFO [__main__] | main.py: line 613 - Player You called 14705. History: You CALL 1 → Bot RAISE 14705 → You CALL 14705
+2026-10-14 00:27:28,416 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-10-14 00:27:28,547 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.6185, raise amount: 5335
+2026-10-14 00:27:28,547 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 5335
+2026-10-14 00:27:28,547 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 5335, remaining money: 3292
+2026-10-14 00:27:28,547 | INFO [__main__] | main.py: line 549 - Bot Bot raised 5335. History: You CALL 1 → Bot RAISE 14705 → You CALL 14705 → Bot RAISE 5335
+2026-10-14 00:27:28,675 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 5335
+2026-10-14 00:27:28,676 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 5335, remaining money: 3292
+2026-10-14 00:27:28,676 | INFO [__main__] | main.py: line 613 - Player You called 5335. History: You CALL 1 → Bot RAISE 14705 → You CALL 14705 → Bot RAISE 5335 → You CALL 5335
+2026-10-14 00:27:28,817 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5992, raise amount: 1972
+2026-10-14 00:27:28,817 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 1972
+2026-10-14 00:27:28,817 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 1972, remaining money: 1320
+2026-10-14 00:27:28,817 | INFO [__main__] | main.py: line 549 - Bot Bot raised 1972. History: You CALL 1 → Bot RAISE 14705 → You CALL 14705 → Bot RAISE 5335 → You CALL 5335 → Bot RAISE 1972
+2026-10-14 00:27:29,262 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 1972
+2026-10-14 00:27:29,262 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1972, remaining money: 1320
+2026-10-14 00:27:29,262 | INFO [__main__] | main.py: line 613 - Player You called 1972. History: You CALL 1 → Bot RAISE 14705 → You CALL 14705 → Bot RAISE 5335 → You CALL 5335 → Bot RAISE 1972 → You CALL 1972
+2026-10-14 00:27:29,385 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.7546, raise amount: 996
+2026-10-14 00:27:29,386 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 996
+2026-10-14 00:27:29,386 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 996, remaining money: 324
+2026-10-14 00:27:29,386 | INFO [__main__] | main.py: line 549 - Bot Bot raised 996. History: You CALL 1 → Bot RAISE 14705 → You CALL 14705 → Bot RAISE 5335 → You CALL 5335 → Bot RAISE 1972 → You CALL 1972 → Bot RAISE 996
+2026-10-14 00:27:30,503 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 996
+2026-10-14 00:27:30,503 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 996, remaining money: 324
+2026-10-14 00:27:30,503 | INFO [__main__] | main.py: line 613 - Player You called 996. History: You CALL 1 → Bot RAISE 14705 → You CALL 14705 → Bot RAISE 5335 → You CALL 5335 → Bot RAISE 1972 → You CALL 1972 → Bot RAISE 996 → You CALL 996
+2026-10-14 00:27:30,508 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-10-14 00:27:30,508 | INFO [poker.poker_logic] | poker_logic.py: line 182 - flush
+2026-10-14 00:27:30,508 | INFO [poker.poker_logic] | poker_logic.py: line 182 - flush
+2026-10-14 00:27:30,508 | INFO [poker.poker_logic] | poker_logic.py: line 269 - two pair
+2026-10-14 00:27:30,508 | INFO [poker.dealer] | dealer.py: line 304 - You won 46020
+2026-10-14 00:27:30,509 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-10-14 00:27:30,509 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 46344
+2026-10-14 00:27:30,509 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 324
