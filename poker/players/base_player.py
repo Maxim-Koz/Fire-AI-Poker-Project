@@ -15,7 +15,7 @@ class BasePlayer(ABC):
         pass
 
     @abstractmethod
-    def hand(self, cards: Collection[Card]): 
+    def preflop(self, cards: Collection[Card]): 
         pass
 
     @abstractmethod

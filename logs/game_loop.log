@@ -1,0 +1,899 @@
+2026-03-21 15:37:10,979 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-21 15:38:20,344 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-21 15:38:29,097 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-21 15:42:03,514 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-21 17:19:46,202 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-21 17:26:07,362 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-21 17:26:59,767 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-24 12:23:13,634 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-24 12:25:27,454 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-24 14:02:01,942 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-24 14:02:02,297 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-24 14:02:02,297 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-24 14:02:02,297 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-24 14:02:02,297 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-24 14:02:03,291 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-24 14:02:03,298 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-24 14:02:03,299 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-24 14:02:03,300 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-24 14:02:03,356 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-24 14:02:03,367 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-24 14:02:09,209 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-24 14:02:09,666 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 43
+2026-03-24 14:02:09,666 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 42
+2026-03-24 14:02:09,666 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-24 14:02:09,666 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 5 of C, 6 of H
+2026-03-24 14:02:09,666 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: A of C, 6 of C
+2026-03-24 14:02:12,782 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 2
+2026-03-24 14:02:12,782 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 42
+2026-03-24 14:02:12,782 | INFO [__main__] | main.py: line 613 - Player You called 1. History: You CALL 1
+2026-03-24 14:02:12,913 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5807, raise amount: 24
+2026-03-24 14:02:12,913 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 24
+2026-03-24 14:02:12,913 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 24, remaining money: 18
+2026-03-24 14:02:12,914 | INFO [__main__] | main.py: line 549 - Bot Bot raised 24. History: You CALL 1 → Bot RAISE 24
+2026-03-24 14:02:12,995 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 26
+2026-03-24 14:02:12,995 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 24, remaining money: 18
+2026-03-24 14:02:12,995 | INFO [__main__] | main.py: line 613 - Player You called 24. History: You CALL 1 → Bot RAISE 24 → You CALL 24
+2026-03-24 14:02:12,995 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-24 14:02:13,098 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5329, raise amount: 9
+2026-03-24 14:02:13,098 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 9
+2026-03-24 14:02:13,098 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 9, remaining money: 9
+2026-03-24 14:02:13,098 | INFO [__main__] | main.py: line 549 - Bot Bot raised 9. History: You CALL 1 → Bot RAISE 24 → You CALL 24 → Bot RAISE 9
+2026-03-24 14:02:13,191 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 9
+2026-03-24 14:02:13,191 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 9, remaining money: 9
+2026-03-24 14:02:13,191 | INFO [__main__] | main.py: line 613 - Player You called 9. History: You CALL 1 → Bot RAISE 24 → You CALL 24 → Bot RAISE 9 → You CALL 9
+2026-03-24 14:02:13,266 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5020, raise amount: 4
+2026-03-24 14:02:13,266 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 4
+2026-03-24 14:02:13,266 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 4, remaining money: 5
+2026-03-24 14:02:13,266 | INFO [__main__] | main.py: line 549 - Bot Bot raised 4. History: You CALL 1 → Bot RAISE 24 → You CALL 24 → Bot RAISE 9 → You CALL 9 → Bot RAISE 4
+2026-03-24 14:02:13,362 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 4
+2026-03-24 14:02:13,362 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 4, remaining money: 5
+2026-03-24 14:02:13,362 | INFO [__main__] | main.py: line 613 - Player You called 4. History: You CALL 1 → Bot RAISE 24 → You CALL 24 → Bot RAISE 9 → You CALL 9 → Bot RAISE 4 → You CALL 4
+2026-03-24 14:02:13,432 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4615
+2026-03-24 14:02:13,432 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-24 14:02:13,432 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 5
+2026-03-24 14:02:13,432 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 24 → You CALL 24 → Bot RAISE 9 → You CALL 9 → Bot RAISE 4 → You CALL 4 → Bot CALL
+2026-03-24 14:02:13,525 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-24 14:02:13,525 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 5
+2026-03-24 14:02:13,525 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 24 → You CALL 24 → Bot RAISE 9 → You CALL 9 → Bot RAISE 4 → You CALL 4 → Bot CALL → You CALL
+2026-03-24 14:02:13,527 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-24 14:02:13,527 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-24 14:02:13,527 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-24 14:02:13,528 | INFO [poker.poker_logic] | poker_logic.py: line 331 - starting tie break
+2026-03-24 14:02:13,528 | INFO [poker.dealer] | dealer.py: line 304 - Bot won 78
+2026-03-24 14:02:13,528 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-03-24 14:02:13,528 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 5
+2026-03-24 14:02:13,528 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 83
+2026-03-24 14:08:29,339 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-24 14:08:29,568 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-24 14:08:29,568 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-24 14:08:29,568 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-24 14:08:29,568 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-24 14:08:30,093 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-24 14:08:30,098 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-24 14:08:30,099 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-24 14:08:30,099 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-24 14:08:30,152 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-24 14:08:30,162 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-24 14:08:38,316 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-24 14:08:39,291 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 43
+2026-03-24 14:08:39,291 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 2, remaining money: 42
+2026-03-24 14:08:39,292 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-24 14:08:39,292 | INFO [poker.dealer] | dealer.py: line 119 - Player 1 received cards: Q of H, 8 of C
+2026-03-24 14:08:39,292 | INFO [poker.dealer] | dealer.py: line 119 - Player 2 received cards: A of H, 9 of D
+2026-03-24 14:08:41,804 | WARNING [tensorflow] | polymorphic_function.py: line 157 - 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x77af59d36160> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-03-24 14:08:41,969 | WARNING [tensorflow] | polymorphic_function.py: line 157 - 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x77af59c179c0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-03-24 14:08:57,618 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 2
+2026-03-24 14:08:57,618 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 42
+2026-03-24 14:08:57,619 | INFO [__main__] | main.py: line 627 - Player Player 1 called 1. History: Player 1 CALL 1
+2026-03-24 14:09:01,418 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 2
+2026-03-24 14:09:01,418 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-24 14:09:01,418 | INFO [__main__] | main.py: line 627 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL
+2026-03-24 14:09:01,418 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-24 14:09:02,829 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:02,918 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,003 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,087 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,167 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,249 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,331 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,415 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,498 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,580 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,665 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,747 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,830 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,912 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:03,993 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:04,257 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:04,343 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:04,426 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:04,514 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:04,597 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:04,681 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:04,765 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:04,848 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:04,932 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:05,016 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:05,098 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:05,183 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:05,265 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:05,351 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:05,742 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:05,825 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:05,910 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:05,994 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,080 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,166 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,249 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,334 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,418 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,501 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,585 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,668 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,756 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,843 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:06,927 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:07,013 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:07,352 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:07,437 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:07,524 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:07,609 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:07,696 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:08,259 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:08,346 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:08,430 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:08,513 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:08,596 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:08,679 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:09,133 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:09,218 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:09,305 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:09,392 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:09,476 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:09,563 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:11,880 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:11,972 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:12,062 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:12,144 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:12,228 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:12,566 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:12,653 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:12,739 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:12,827 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:12,920 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,007 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,094 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,182 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,268 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,351 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,437 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,521 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,606 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,690 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,780 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:13,868 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:15,456 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-24 14:09:15,457 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-24 14:09:15,457 | INFO [__main__] | main.py: line 627 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL
+2026-03-24 14:09:16,288 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:16,379 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:16,468 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:16,554 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:16,638 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:17,088 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:17,174 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:17,261 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:17,346 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:17,429 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:17,514 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:17,599 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:17,683 | ERROR [__main__] | main.py: line 1006 - Error calculating hand probability: index 411 is out of bounds for axis 0 with size 364
+2026-03-24 14:09:19,274 | INFO [__main__] | main.py: line 604 - Player Player 2 folded. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 FOLD
+2026-03-24 14:09:19,274 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 4
+2026-03-24 14:09:40,178 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-24 14:09:40,401 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-24 14:09:40,401 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-24 14:09:40,401 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-24 14:09:40,401 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-24 14:09:40,948 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-24 14:09:40,954 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-24 14:09:40,955 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-24 14:09:40,955 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-24 14:09:41,010 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-24 14:09:41,026 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-24 14:09:46,727 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-24 14:09:47,481 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 43
+2026-03-24 14:09:47,482 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 2, remaining money: 42
+2026-03-24 14:09:47,482 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-24 14:09:47,482 | INFO [poker.dealer] | dealer.py: line 119 - Player 1 received cards: 6 of H, K of C
+2026-03-24 14:09:47,482 | INFO [poker.dealer] | dealer.py: line 119 - Player 2 received cards: A of S, 2 of S
+2026-03-24 14:09:48,343 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 2
+2026-03-24 14:09:48,343 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 42
+2026-03-24 14:09:48,343 | INFO [__main__] | main.py: line 613 - Player Player 1 called 1. History: Player 1 CALL 1
+2026-03-24 14:09:49,046 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 2
+2026-03-24 14:09:49,047 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-24 14:09:49,047 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL
+2026-03-24 14:09:49,047 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-24 14:09:49,485 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-24 14:09:49,485 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-24 14:09:49,485 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL
+2026-03-24 14:09:49,751 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-24 14:09:49,751 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-24 14:09:49,751 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-24 14:09:50,036 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-24 14:09:50,036 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-24 14:09:50,036 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-24 14:09:50,269 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-24 14:09:50,269 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-24 14:09:50,269 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-24 14:09:50,567 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-24 14:09:50,567 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-24 14:09:50,567 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-24 14:09:50,952 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-24 14:09:50,952 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-24 14:09:50,952 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-24 14:09:50,955 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-24 14:09:50,956 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-24 14:09:50,956 | INFO [poker.poker_logic] | poker_logic.py: line 326 - high card
+2026-03-24 14:09:50,956 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 4
+2026-03-24 14:09:50,956 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 0
+2026-03-24 14:09:50,956 | INFO [poker.dealer] | dealer.py: line 358 - Player 1 finished game with 46
+2026-03-24 14:09:50,956 | INFO [poker.dealer] | dealer.py: line 358 - Player 2 finished game with 42
+2026-03-26 12:06:04,403 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-26 12:06:04,795 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 12:06:04,795 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 12:06:04,795 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 12:06:04,795 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 12:06:05,751 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-26 12:06:05,762 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-26 12:06:05,765 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-26 12:06:05,765 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-26 12:06:05,873 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-26 12:06:05,893 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-26 12:06:13,911 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 12:06:16,266 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 43
+2026-03-26 12:06:16,266 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 42
+2026-03-26 12:06:16,266 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 12:06:16,266 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 6 of D, A of H
+2026-03-26 12:06:16,266 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: 3 of S, K of S
+2026-03-26 12:06:24,675 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 2
+2026-03-26 12:06:24,675 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 42
+2026-03-26 12:06:24,675 | INFO [__main__] | main.py: line 613 - Player You called 1. History: You CALL 1
+2026-03-26 12:06:24,881 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5662, raise amount: 23
+2026-03-26 12:06:24,881 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 23
+2026-03-26 12:06:24,881 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 23, remaining money: 19
+2026-03-26 12:06:24,881 | INFO [__main__] | main.py: line 549 - Bot Bot raised 23. History: You CALL 1 → Bot RAISE 23
+2026-03-26 12:06:26,571 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 25
+2026-03-26 12:06:26,571 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 23, remaining money: 19
+2026-03-26 12:06:26,571 | INFO [__main__] | main.py: line 613 - Player You called 23. History: You CALL 1 → Bot RAISE 23 → You CALL 23
+2026-03-26 12:06:26,571 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 12:06:26,705 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5029, raise amount: 9
+2026-03-26 12:06:26,706 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 9
+2026-03-26 12:06:26,706 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 9, remaining money: 10
+2026-03-26 12:06:26,706 | INFO [__main__] | main.py: line 549 - Bot Bot raised 9. History: You CALL 1 → Bot RAISE 23 → You CALL 23 → Bot RAISE 9
+2026-03-26 12:06:27,321 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 9
+2026-03-26 12:06:27,321 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 9, remaining money: 10
+2026-03-26 12:06:27,321 | INFO [__main__] | main.py: line 613 - Player You called 9. History: You CALL 1 → Bot RAISE 23 → You CALL 23 → Bot RAISE 9 → You CALL 9
+2026-03-26 12:06:27,450 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5111, raise amount: 5
+2026-03-26 12:06:27,450 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 5
+2026-03-26 12:06:27,450 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 5, remaining money: 5
+2026-03-26 12:06:27,451 | INFO [__main__] | main.py: line 549 - Bot Bot raised 5. History: You CALL 1 → Bot RAISE 23 → You CALL 23 → Bot RAISE 9 → You CALL 9 → Bot RAISE 5
+2026-03-26 12:06:28,200 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 5
+2026-03-26 12:06:28,201 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 5, remaining money: 5
+2026-03-26 12:06:28,201 | INFO [__main__] | main.py: line 613 - Player You called 5. History: You CALL 1 → Bot RAISE 23 → You CALL 23 → Bot RAISE 9 → You CALL 9 → Bot RAISE 5 → You CALL 5
+2026-03-26 12:06:28,330 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.3500
+2026-03-26 12:06:28,330 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 12:06:28,330 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 5
+2026-03-26 12:06:28,331 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 23 → You CALL 23 → Bot RAISE 9 → You CALL 9 → Bot RAISE 5 → You CALL 5 → Bot CALL
+2026-03-26 12:06:28,812 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 12:06:28,812 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 5
+2026-03-26 12:06:28,812 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 23 → You CALL 23 → Bot RAISE 9 → You CALL 9 → Bot RAISE 5 → You CALL 5 → Bot CALL → You CALL
+2026-03-26 12:06:28,816 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 12:06:28,816 | INFO [poker.poker_logic] | poker_logic.py: line 159 - straight
+2026-03-26 12:06:28,816 | INFO [poker.poker_logic] | poker_logic.py: line 159 - straight
+2026-03-26 12:06:28,816 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 12:06:28,817 | INFO [poker.dealer] | dealer.py: line 304 - You won 78
+2026-03-26 12:06:28,817 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-03-26 12:06:28,817 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 83
+2026-03-26 12:06:28,817 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 5
+2026-03-26 12:06:46,086 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 12:06:46,637 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 99
+2026-03-26 12:06:46,637 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 98
+2026-03-26 12:06:46,637 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 12:06:46,637 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 3 of D, 5 of C
+2026-03-26 12:06:46,638 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: T of D, 2 of D
+2026-03-26 12:06:47,507 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 2
+2026-03-26 12:06:47,507 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 98
+2026-03-26 12:06:47,507 | INFO [__main__] | main.py: line 613 - Player You called 1. History: You CALL 1
+2026-03-26 12:06:47,683 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4210
+2026-03-26 12:06:47,683 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 2
+2026-03-26 12:06:47,684 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 98
+2026-03-26 12:06:47,684 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL
+2026-03-26 12:06:47,684 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 12:06:48,137 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 12:06:48,137 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 98
+2026-03-26 12:06:48,137 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot CALL → You CALL
+2026-03-26 12:06:48,309 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5011, raise amount: 49
+2026-03-26 12:06:48,311 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 49
+2026-03-26 12:06:48,312 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 49, remaining money: 49
+2026-03-26 12:06:48,312 | INFO [__main__] | main.py: line 549 - Bot Bot raised 49. History: You CALL 1 → Bot CALL → You CALL → Bot RAISE 49
+2026-03-26 12:06:48,926 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 49
+2026-03-26 12:06:48,927 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 49, remaining money: 49
+2026-03-26 12:06:48,927 | INFO [__main__] | main.py: line 613 - Player You called 49. History: You CALL 1 → Bot CALL → You CALL → Bot RAISE 49 → You CALL 49
+2026-03-26 12:06:49,060 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4916
+2026-03-26 12:06:49,061 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 12:06:49,061 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 49
+2026-03-26 12:06:49,061 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL → You CALL → Bot RAISE 49 → You CALL 49 → Bot CALL
+2026-03-26 12:06:49,553 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 12:06:49,553 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 49
+2026-03-26 12:06:49,553 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot CALL → You CALL → Bot RAISE 49 → You CALL 49 → Bot CALL → You CALL
+2026-03-26 12:06:49,686 | INFO [poker.players.bot_player] | bot_player.py: line 49 - Bot checking with hand probability: 0.2161
+2026-03-26 12:06:49,686 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 12:06:49,686 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 49
+2026-03-26 12:06:49,687 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL → You CALL → Bot RAISE 49 → You CALL 49 → Bot CALL → You CALL → Bot CALL
+2026-03-26 12:06:50,336 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 12:06:50,336 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 49
+2026-03-26 12:06:50,336 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot CALL → You CALL → Bot RAISE 49 → You CALL 49 → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 12:06:50,339 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 12:06:50,340 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 12:06:50,340 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 12:06:50,340 | INFO [poker.poker_logic] | poker_logic.py: line 331 - starting tie break
+2026-03-26 12:06:50,340 | INFO [poker.dealer] | dealer.py: line 304 - You won 102
+2026-03-26 12:06:50,340 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-03-26 12:06:50,340 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 151
+2026-03-26 12:06:50,340 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 49
+2026-03-26 12:07:01,949 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 12:07:02,556 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 43
+2026-03-26 12:07:02,556 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 2, remaining money: 42
+2026-03-26 12:07:02,556 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 12:07:02,556 | INFO [poker.dealer] | dealer.py: line 119 - Player 1 received cards: 6 of H, 4 of D
+2026-03-26 12:07:02,557 | INFO [poker.dealer] | dealer.py: line 119 - Player 2 received cards: A of S, 2 of D
+2026-03-26 12:07:03,454 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 2
+2026-03-26 12:07:03,455 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 42
+2026-03-26 12:07:03,455 | INFO [__main__] | main.py: line 613 - Player Player 1 called 1. History: Player 1 CALL 1
+2026-03-26 12:07:04,338 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 2
+2026-03-26 12:07:04,339 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 12:07:04,339 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL
+2026-03-26 12:07:04,339 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 12:07:05,271 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 12:07:05,271 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-26 12:07:05,272 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL
+2026-03-26 12:07:05,722 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 12:07:05,722 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 12:07:05,722 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 12:07:06,056 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 12:07:06,056 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-26 12:07:06,056 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-26 12:07:09,471 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 12:07:09,471 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 12:07:09,471 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 12:07:12,893 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 12:07:12,893 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-26 12:07:12,893 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-26 12:07:13,239 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 12:07:13,239 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 12:07:13,239 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 12:07:13,242 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 12:07:13,243 | INFO [poker.poker_logic] | poker_logic.py: line 269 - two pair
+2026-03-26 12:07:13,243 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 12:07:13,243 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 4
+2026-03-26 12:07:13,243 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 0
+2026-03-26 12:07:13,243 | INFO [poker.dealer] | dealer.py: line 358 - Player 1 finished game with 46
+2026-03-26 12:07:13,243 | INFO [poker.dealer] | dealer.py: line 358 - Player 2 finished game with 42
+2026-03-26 12:16:21,564 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-26 12:16:21,952 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 12:16:21,952 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 12:16:21,953 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 12:16:21,953 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 12:16:22,906 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-26 12:16:22,920 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-26 12:16:22,922 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-26 12:16:22,922 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-26 12:16:23,032 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-26 12:16:23,058 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-26 12:24:39,051 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-26 12:24:39,450 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 12:24:39,451 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 12:24:39,451 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 12:24:39,451 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 12:24:40,377 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-26 12:24:40,387 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-26 12:24:40,388 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-26 12:24:40,388 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-26 12:24:40,497 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-26 12:24:40,515 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-26 12:24:47,336 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 12:24:47,714 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 43
+2026-03-26 12:24:47,714 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 42
+2026-03-26 12:24:47,714 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 12:24:47,714 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 5 of H, K of C
+2026-03-26 12:24:47,714 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: 6 of S, 2 of S
+2026-03-26 12:24:49,027 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 2
+2026-03-26 12:24:49,027 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 42
+2026-03-26 12:24:49,027 | INFO [__main__] | main.py: line 613 - Player You called 1. History: You CALL 1
+2026-03-26 12:24:49,216 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.3504
+2026-03-26 12:24:49,216 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 2
+2026-03-26 12:24:49,217 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 42
+2026-03-26 12:24:49,217 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL
+2026-03-26 12:24:49,217 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 12:24:49,250 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 12:24:49,250 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 42
+2026-03-26 12:24:49,250 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot CALL → You CALL
+2026-03-26 12:24:49,390 | INFO [poker.players.bot_player] | bot_player.py: line 49 - Bot checking with hand probability: 0.2144
+2026-03-26 12:24:49,390 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 12:24:49,390 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 42
+2026-03-26 12:24:49,390 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL
+2026-03-26 12:24:49,434 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 12:24:49,434 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 42
+2026-03-26 12:24:49,434 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 12:24:49,578 | INFO [poker.players.bot_player] | bot_player.py: line 49 - Bot checking with hand probability: 0.1521
+2026-03-26 12:24:49,579 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 12:24:49,579 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 42
+2026-03-26 12:24:49,579 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL
+2026-03-26 12:24:49,617 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 12:24:49,617 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 42
+2026-03-26 12:24:49,617 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 12:24:49,765 | INFO [poker.players.bot_player] | bot_player.py: line 49 - Bot checking with hand probability: 0.1211
+2026-03-26 12:24:49,765 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 12:24:49,765 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 42
+2026-03-26 12:24:49,766 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL
+2026-03-26 12:24:49,766 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 12:24:49,766 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 42
+2026-03-26 12:24:49,766 | INFO [__main__] | main.py: line 613 - Player Bot called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL → Bot CALL
+2026-03-26 12:24:49,770 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 12:24:49,771 | INFO [poker.poker_logic] | poker_logic.py: line 269 - two pair
+2026-03-26 12:24:49,771 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 12:24:49,771 | INFO [poker.dealer] | dealer.py: line 304 - You won 4
+2026-03-26 12:24:49,771 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-03-26 12:24:49,772 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 46
+2026-03-26 12:24:49,772 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 42
+2026-03-26 12:24:55,346 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 12:24:56,197 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 43
+2026-03-26 12:24:56,197 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 42
+2026-03-26 12:24:56,197 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 12:24:56,197 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 9 of H, 2 of C
+2026-03-26 12:24:56,197 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: 6 of D, 5 of D
+2026-03-26 12:24:57,890 | INFO [__main__] | main.py: line 590 - Player You folded. History: You FOLD
+2026-03-26 12:24:57,890 | INFO [poker.dealer] | dealer.py: line 304 - Bot won 0
+2026-03-26 12:25:11,431 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-26 12:25:11,813 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 12:25:11,814 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 12:25:11,814 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 12:25:11,814 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 12:25:12,733 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-26 12:25:12,743 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-26 12:25:12,744 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-26 12:25:12,745 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-26 12:25:12,845 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-26 12:25:12,874 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-26 12:26:37,482 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 12:26:39,207 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 443
+2026-03-26 12:26:39,208 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 2, remaining money: 442
+2026-03-26 12:26:39,208 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 12:26:39,208 | INFO [poker.dealer] | dealer.py: line 119 - Player 1 received cards: 7 of H, 5 of C
+2026-03-26 12:26:39,208 | INFO [poker.dealer] | dealer.py: line 119 - Player 2 received cards: K of H, A of S
+2026-03-26 13:29:54,056 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-26 13:29:54,470 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 13:29:54,470 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 13:29:54,470 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 13:29:54,470 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 13:29:55,430 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-26 13:29:55,441 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-26 13:29:55,442 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-26 13:29:55,442 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-26 13:29:55,549 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-26 13:29:55,578 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-26 14:20:23,876 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-26 14:20:24,265 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 14:20:24,265 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 14:20:24,265 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 14:20:24,266 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 14:20:25,239 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-26 14:20:25,249 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-26 14:20:25,251 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-26 14:20:25,251 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-26 14:20:25,365 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-26 14:20:25,391 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-26 14:20:34,573 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 4 and no. players: 2
+2026-03-26 14:20:35,412 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 2, remaining money: 98
+2026-03-26 14:20:35,412 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 4, remaining money: 96
+2026-03-26 14:20:35,412 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 14:20:35,412 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 3 of C, 4 of C
+2026-03-26 14:20:35,412 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: T of C, 5 of C
+2026-03-26 14:20:36,572 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 4
+2026-03-26 14:20:36,573 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 2, remaining money: 96
+2026-03-26 14:20:36,573 | INFO [__main__] | main.py: line 613 - Player You called 2. History: You CALL 2
+2026-03-26 14:20:36,774 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4964
+2026-03-26 14:20:36,774 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 4
+2026-03-26 14:20:36,775 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 96
+2026-03-26 14:20:36,775 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 2 → Bot CALL
+2026-03-26 14:20:36,775 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 14:20:37,815 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:20:37,815 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 96
+2026-03-26 14:20:37,815 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 2 → Bot CALL → You CALL
+2026-03-26 14:20:37,949 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4374
+2026-03-26 14:20:37,950 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:20:37,950 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 96
+2026-03-26 14:20:37,950 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 2 → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:20:42,429 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:20:42,430 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 96
+2026-03-26 14:20:42,430 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 2 → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 14:20:42,563 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5133, raise amount: 49
+2026-03-26 14:20:42,564 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 49
+2026-03-26 14:20:42,564 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 49, remaining money: 47
+2026-03-26 14:20:42,573 | INFO [__main__] | main.py: line 549 - Bot Bot raised 49. History: You CALL 2 → Bot CALL → You CALL → Bot CALL → You CALL → Bot RAISE 49
+2026-03-26 14:20:43,030 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 49
+2026-03-26 14:20:43,030 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 49, remaining money: 47
+2026-03-26 14:20:43,030 | INFO [__main__] | main.py: line 613 - Player You called 49. History: You CALL 2 → Bot CALL → You CALL → Bot CALL → You CALL → Bot RAISE 49 → You CALL 49
+2026-03-26 14:20:43,162 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4009
+2026-03-26 14:20:43,163 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:20:43,163 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 47
+2026-03-26 14:20:43,163 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 2 → Bot CALL → You CALL → Bot CALL → You CALL → Bot RAISE 49 → You CALL 49 → Bot CALL
+2026-03-26 14:20:43,603 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:20:43,603 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 47
+2026-03-26 14:20:43,603 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 2 → Bot CALL → You CALL → Bot CALL → You CALL → Bot RAISE 49 → You CALL 49 → Bot CALL → You CALL
+2026-03-26 14:20:43,607 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 14:20:43,607 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 14:20:43,607 | INFO [poker.poker_logic] | poker_logic.py: line 326 - high card
+2026-03-26 14:20:43,607 | INFO [poker.dealer] | dealer.py: line 304 - You won 106
+2026-03-26 14:20:43,607 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-03-26 14:20:43,608 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 153
+2026-03-26 14:20:43,608 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 47
+2026-03-26 14:21:20,627 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 14:21:21,181 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 43
+2026-03-26 14:21:21,181 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 2, remaining money: 42
+2026-03-26 14:21:21,181 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 14:21:21,181 | INFO [poker.dealer] | dealer.py: line 119 - Player 1 received cards: 3 of S, 4 of D
+2026-03-26 14:21:21,181 | INFO [poker.dealer] | dealer.py: line 119 - Player 2 received cards: 2 of S, 8 of D
+2026-03-26 14:21:22,076 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 2
+2026-03-26 14:21:22,076 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 42
+2026-03-26 14:21:22,076 | INFO [__main__] | main.py: line 613 - Player Player 1 called 1. History: Player 1 CALL 1
+2026-03-26 14:21:22,864 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 2
+2026-03-26 14:21:22,864 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 14:21:22,864 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL
+2026-03-26 14:21:22,865 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 14:21:23,432 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 14:21:23,432 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-26 14:21:23,432 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL
+2026-03-26 14:21:24,110 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 14:21:24,110 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 14:21:24,110 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 14:21:24,707 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 14:21:24,707 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-26 14:21:24,708 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-26 14:21:25,358 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 14:21:25,358 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 14:21:25,358 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 14:21:25,946 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 14:21:25,946 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-26 14:21:25,946 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-26 14:21:26,477 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 14:21:26,477 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 14:21:26,477 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 14:21:26,481 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 14:21:26,481 | INFO [poker.poker_logic] | poker_logic.py: line 269 - two pair
+2026-03-26 14:21:26,481 | INFO [poker.poker_logic] | poker_logic.py: line 326 - high card
+2026-03-26 14:21:26,481 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 4
+2026-03-26 14:21:26,481 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 0
+2026-03-26 14:21:26,481 | INFO [poker.dealer] | dealer.py: line 358 - Player 1 finished game with 46
+2026-03-26 14:21:26,482 | INFO [poker.dealer] | dealer.py: line 358 - Player 2 finished game with 42
+2026-03-26 14:21:39,500 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 14:21:40,244 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 43
+2026-03-26 14:21:40,244 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 42
+2026-03-26 14:21:40,244 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 14:21:40,244 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 7 of H, K of C
+2026-03-26 14:21:40,244 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: J of C, 6 of D
+2026-03-26 14:21:41,232 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 2
+2026-03-26 14:21:41,232 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 42
+2026-03-26 14:21:41,233 | INFO [__main__] | main.py: line 613 - Player You called 1. History: You CALL 1
+2026-03-26 14:21:41,414 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5330, raise amount: 22
+2026-03-26 14:21:41,415 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 22
+2026-03-26 14:21:41,448 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 22, remaining money: 20
+2026-03-26 14:21:41,448 | INFO [__main__] | main.py: line 549 - Bot Bot raised 22. History: You CALL 1 → Bot RAISE 22
+2026-03-26 14:21:41,854 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 24
+2026-03-26 14:21:41,855 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 22, remaining money: 20
+2026-03-26 14:21:41,855 | INFO [__main__] | main.py: line 613 - Player You called 22. History: You CALL 1 → Bot RAISE 22 → You CALL 22
+2026-03-26 14:21:41,855 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 14:21:41,993 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4005
+2026-03-26 14:21:41,993 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:21:41,994 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 20
+2026-03-26 14:21:41,994 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL
+2026-03-26 14:21:42,107 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:21:42,107 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 20
+2026-03-26 14:21:42,107 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL
+2026-03-26 14:21:42,253 | INFO [poker.players.bot_player] | bot_player.py: line 49 - Bot checking with hand probability: 0.2816
+2026-03-26 14:21:42,254 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:21:42,254 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 20
+2026-03-26 14:21:42,254 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:21:42,540 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:21:42,541 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 20
+2026-03-26 14:21:42,541 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 14:21:42,683 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.3541
+2026-03-26 14:21:42,683 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:21:42,683 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 20
+2026-03-26 14:21:42,684 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:21:42,956 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:21:42,956 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 20
+2026-03-26 14:21:42,957 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 14:21:42,961 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 14:21:42,961 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 14:21:42,961 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 14:21:42,961 | INFO [poker.poker_logic] | poker_logic.py: line 331 - starting tie break
+2026-03-26 14:21:42,962 | INFO [poker.dealer] | dealer.py: line 304 - You won 48
+2026-03-26 14:21:42,962 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-03-26 14:21:42,962 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 68
+2026-03-26 14:21:42,962 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 20
+2026-03-26 14:21:54,365 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 14:21:54,853 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 43
+2026-03-26 14:21:54,854 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 42
+2026-03-26 14:21:54,854 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 14:21:54,854 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 7 of H, A of D
+2026-03-26 14:21:54,854 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: Q of H, T of S
+2026-03-26 14:21:55,665 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 2
+2026-03-26 14:21:55,666 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 42
+2026-03-26 14:21:55,666 | INFO [__main__] | main.py: line 613 - Player You called 1. History: You CALL 1
+2026-03-26 14:21:55,844 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5252, raise amount: 22
+2026-03-26 14:21:55,844 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 22
+2026-03-26 14:21:55,845 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 22, remaining money: 20
+2026-03-26 14:21:55,845 | INFO [__main__] | main.py: line 549 - Bot Bot raised 22. History: You CALL 1 → Bot RAISE 22
+2026-03-26 14:21:57,152 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 24
+2026-03-26 14:21:57,152 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 22, remaining money: 20
+2026-03-26 14:21:57,152 | INFO [__main__] | main.py: line 613 - Player You called 22. History: You CALL 1 → Bot RAISE 22 → You CALL 22
+2026-03-26 14:21:57,152 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 14:21:57,278 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.3765
+2026-03-26 14:21:57,278 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:21:57,278 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 20
+2026-03-26 14:21:57,278 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL
+2026-03-26 14:21:57,720 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:21:57,720 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 20
+2026-03-26 14:21:57,721 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL
+2026-03-26 14:21:57,851 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.3539
+2026-03-26 14:21:57,851 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:21:57,851 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 20
+2026-03-26 14:21:57,851 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:21:58,136 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:21:58,136 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 20
+2026-03-26 14:21:58,136 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 14:21:58,398 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.3861
+2026-03-26 14:21:58,399 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:21:58,399 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 20
+2026-03-26 14:21:58,399 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:21:58,702 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:21:58,702 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 20
+2026-03-26 14:21:58,702 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 22 → You CALL 22 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 14:21:58,707 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 14:21:58,707 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 14:21:58,707 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 14:21:58,708 | INFO [poker.poker_logic] | poker_logic.py: line 331 - starting tie break
+2026-03-26 14:21:58,708 | INFO [poker.dealer] | dealer.py: line 304 - You won 48
+2026-03-26 14:21:58,708 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-03-26 14:21:58,708 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 68
+2026-03-26 14:21:58,708 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 20
+2026-03-26 14:22:07,869 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 14:22:08,387 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 43
+2026-03-26 14:22:08,387 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 42
+2026-03-26 14:22:08,387 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 14:22:08,387 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: T of H, 9 of S
+2026-03-26 14:22:08,387 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: 7 of D, J of H
+2026-03-26 14:22:09,594 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 2
+2026-03-26 14:22:09,595 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 42
+2026-03-26 14:22:09,595 | INFO [__main__] | main.py: line 613 - Player You called 1. History: You CALL 1
+2026-03-26 14:22:09,780 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4662
+2026-03-26 14:22:09,781 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 2
+2026-03-26 14:22:09,781 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 42
+2026-03-26 14:22:09,781 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL
+2026-03-26 14:22:09,781 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 14:22:09,952 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:22:09,953 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 42
+2026-03-26 14:22:09,953 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot CALL → You CALL
+2026-03-26 14:22:10,107 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.3049
+2026-03-26 14:22:10,107 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:22:10,107 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 42
+2026-03-26 14:22:10,107 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:22:10,173 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:22:10,173 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 42
+2026-03-26 14:22:10,173 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 14:22:10,362 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.3012
+2026-03-26 14:22:10,363 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:22:10,363 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 42
+2026-03-26 14:22:10,363 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:22:10,399 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:22:10,399 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 42
+2026-03-26 14:22:10,400 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 14:22:10,583 | INFO [poker.players.bot_player] | bot_player.py: line 49 - Bot checking with hand probability: 0.2911
+2026-03-26 14:22:10,583 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:22:10,584 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 42
+2026-03-26 14:22:10,584 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:22:10,590 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 14:22:10,591 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 14:22:10,592 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 14:22:10,592 | INFO [poker.poker_logic] | poker_logic.py: line 331 - starting tie break
+2026-03-26 14:22:10,592 | INFO [poker.dealer] | dealer.py: line 304 - Bot won 4
+2026-03-26 14:22:10,592 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-03-26 14:22:10,592 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 42
+2026-03-26 14:22:10,593 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 46
+2026-03-26 14:22:23,789 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 14:22:24,220 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 43
+2026-03-26 14:22:24,221 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 2, remaining money: 42
+2026-03-26 14:22:24,221 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 14:22:24,221 | INFO [poker.dealer] | dealer.py: line 119 - You received cards: 7 of C, K of C
+2026-03-26 14:22:24,221 | INFO [poker.dealer] | dealer.py: line 119 - Bot received cards: K of H, 3 of D
+2026-03-26 14:22:24,951 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 2
+2026-03-26 14:22:24,951 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 1, remaining money: 42
+2026-03-26 14:22:24,951 | INFO [__main__] | main.py: line 613 - Player You called 1. History: You CALL 1
+2026-03-26 14:22:25,139 | INFO [poker.players.bot_player] | bot_player.py: line 70 - Bot raising with hand probability: 0.5134, raise amount: 21
+2026-03-26 14:22:25,139 | INFO [poker.dealer] | dealer.py: line 100 - Bot raised amount: 21
+2026-03-26 14:22:25,139 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 21, remaining money: 21
+2026-03-26 14:22:25,139 | INFO [__main__] | main.py: line 549 - Bot Bot raised 21. History: You CALL 1 → Bot RAISE 21
+2026-03-26 14:22:25,491 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 23
+2026-03-26 14:22:25,491 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 21, remaining money: 21
+2026-03-26 14:22:25,491 | INFO [__main__] | main.py: line 613 - Player You called 21. History: You CALL 1 → Bot RAISE 21 → You CALL 21
+2026-03-26 14:22:25,491 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 14:22:25,630 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4957
+2026-03-26 14:22:25,630 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:22:25,630 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 21
+2026-03-26 14:22:25,631 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 21 → You CALL 21 → Bot CALL
+2026-03-26 14:22:26,067 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:22:26,067 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 21
+2026-03-26 14:22:26,067 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 21 → You CALL 21 → Bot CALL → You CALL
+2026-03-26 14:22:26,197 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4897
+2026-03-26 14:22:26,197 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:22:26,198 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 21
+2026-03-26 14:22:26,198 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 21 → You CALL 21 → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:22:26,566 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:22:26,566 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 21
+2026-03-26 14:22:26,566 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 21 → You CALL 21 → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 14:22:26,702 | INFO [poker.players.bot_player] | bot_player.py: line 59 - Bot calling with hand probability: 0.4087
+2026-03-26 14:22:26,703 | INFO [poker.dealer] | dealer.py: line 90 - Bot called with amount: 0
+2026-03-26 14:22:26,703 | INFO [poker.dealer] | dealer.py: line 295 - Bot placed bet of 0, remaining money: 21
+2026-03-26 14:22:26,703 | INFO [__main__] | main.py: line 523 - Bot Bot called 0. History: You CALL 1 → Bot RAISE 21 → You CALL 21 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL
+2026-03-26 14:22:27,053 | INFO [poker.dealer] | dealer.py: line 90 - You called with amount: 0
+2026-03-26 14:22:27,054 | INFO [poker.dealer] | dealer.py: line 295 - You placed bet of 0, remaining money: 21
+2026-03-26 14:22:27,054 | INFO [__main__] | main.py: line 613 - Player You called 0. History: You CALL 1 → Bot RAISE 21 → You CALL 21 → Bot CALL → You CALL → Bot CALL → You CALL → Bot CALL → You CALL
+2026-03-26 14:22:27,057 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 14:22:27,057 | INFO [poker.poker_logic] | poker_logic.py: line 326 - high card
+2026-03-26 14:22:27,057 | INFO [poker.poker_logic] | poker_logic.py: line 326 - high card
+2026-03-26 14:22:27,058 | INFO [poker.poker_logic] | poker_logic.py: line 331 - starting tie break
+2026-03-26 14:22:27,058 | INFO [poker.dealer] | dealer.py: line 304 - You won 46
+2026-03-26 14:22:27,058 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
+2026-03-26 14:22:27,058 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 67
+2026-03-26 14:22:27,058 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 21
+2026-03-26 14:22:43,034 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 14:22:43,511 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 54
+2026-03-26 14:22:43,512 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 2, remaining money: 53
+2026-03-26 14:22:43,512 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 14:22:43,512 | INFO [poker.dealer] | dealer.py: line 119 - Player 1 received cards: Q of S, T of H
+2026-03-26 14:22:43,512 | INFO [poker.dealer] | dealer.py: line 119 - Player 2 received cards: 2 of C, 3 of C
+2026-03-26 14:22:44,260 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 2
+2026-03-26 14:22:44,261 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 53
+2026-03-26 14:22:44,261 | INFO [__main__] | main.py: line 613 - Player Player 1 called 1. History: Player 1 CALL 1
+2026-03-26 14:22:44,589 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 2
+2026-03-26 14:22:44,589 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 53
+2026-03-26 14:22:44,589 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL
+2026-03-26 14:22:44,589 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 14:22:44,862 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 14:22:44,863 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 53
+2026-03-26 14:22:44,863 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL
+2026-03-26 14:22:45,090 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 14:22:45,090 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 53
+2026-03-26 14:22:45,091 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 14:22:45,449 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 14:22:45,450 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 53
+2026-03-26 14:22:45,450 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-26 14:22:45,846 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 14:22:45,846 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 53
+2026-03-26 14:22:45,847 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 14:22:46,083 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 14:22:46,084 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 53
+2026-03-26 14:22:46,084 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-26 14:22:46,270 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 14:22:46,271 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 53
+2026-03-26 14:22:46,271 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 14:22:46,274 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 14:22:46,275 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 14:22:46,275 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 14:22:46,275 | INFO [poker.poker_logic] | poker_logic.py: line 331 - starting tie break
+2026-03-26 14:22:46,275 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 4
+2026-03-26 14:22:46,275 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 0
+2026-03-26 14:22:46,275 | INFO [poker.dealer] | dealer.py: line 358 - Player 1 finished game with 57
+2026-03-26 14:22:46,275 | INFO [poker.dealer] | dealer.py: line 358 - Player 2 finished game with 53
+2026-03-26 15:23:35,557 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-03-26 15:23:35,979 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 15:23:35,979 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 15:23:35,980 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-03-26 15:23:35,980 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-03-26 15:23:36,947 | DEBUG [matplotlib] | __init__.py: line 342 - matplotlib data path: /home/maxim/miniconda3/envs/poker/lib/python3.12/site-packages/matplotlib/mpl-data
+2026-03-26 15:23:36,959 | DEBUG [matplotlib] | __init__.py: line 342 - CONFIGDIR=/home/maxim/.config/matplotlib
+2026-03-26 15:23:36,961 | DEBUG [matplotlib] | __init__.py: line 1560 - interactive is False
+2026-03-26 15:23:36,962 | DEBUG [matplotlib] | __init__.py: line 1561 - platform is linux
+2026-03-26 15:23:37,058 | DEBUG [matplotlib] | __init__.py: line 342 - CACHEDIR=/home/maxim/.cache/matplotlib
+2026-03-26 15:23:37,076 | DEBUG [matplotlib.font_manager] | font_manager.py: line 1635 - Using fontManager instance from /home/maxim/.cache/matplotlib/fontlist-v390.json
+2026-03-26 15:23:41,942 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-03-26 15:23:42,469 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 43
+2026-03-26 15:23:42,470 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 2, remaining money: 42
+2026-03-26 15:23:42,470 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-03-26 15:23:42,470 | INFO [poker.dealer] | dealer.py: line 119 - Player 1 received cards: 8 of D, 5 of S
+2026-03-26 15:23:42,470 | INFO [poker.dealer] | dealer.py: line 119 - Player 2 received cards: A of H, 2 of S
+2026-03-26 15:23:43,546 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 2
+2026-03-26 15:23:43,546 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 1, remaining money: 42
+2026-03-26 15:23:43,546 | INFO [__main__] | main.py: line 613 - Player Player 1 called 1. History: Player 1 CALL 1
+2026-03-26 15:23:43,943 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 2
+2026-03-26 15:23:43,943 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 15:23:43,943 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL
+2026-03-26 15:23:43,943 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-03-26 15:23:44,250 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 15:23:44,251 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-26 15:23:44,251 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL
+2026-03-26 15:23:44,405 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 15:23:44,405 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 15:23:44,405 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 15:23:44,563 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 15:23:44,563 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-26 15:23:44,564 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-26 15:23:44,737 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 15:23:44,737 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 15:23:44,737 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 15:23:44,877 | INFO [poker.dealer] | dealer.py: line 90 - Player 1 called with amount: 0
+2026-03-26 15:23:44,877 | INFO [poker.dealer] | dealer.py: line 295 - Player 1 placed bet of 0, remaining money: 42
+2026-03-26 15:23:44,877 | INFO [__main__] | main.py: line 613 - Player Player 1 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL
+2026-03-26 15:23:45,025 | INFO [poker.dealer] | dealer.py: line 90 - Player 2 called with amount: 0
+2026-03-26 15:23:45,025 | INFO [poker.dealer] | dealer.py: line 295 - Player 2 placed bet of 0, remaining money: 42
+2026-03-26 15:23:45,034 | INFO [__main__] | main.py: line 613 - Player Player 2 called 0. History: Player 1 CALL 1 → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL → Player 1 CALL → Player 2 CALL
+2026-03-26 15:23:45,041 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-03-26 15:23:45,042 | INFO [poker.poker_logic] | poker_logic.py: line 159 - straight
+2026-03-26 15:23:45,042 | INFO [poker.poker_logic] | poker_logic.py: line 159 - straight
+2026-03-26 15:23:45,042 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-03-26 15:23:45,043 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 4
+2026-03-26 15:23:45,043 | INFO [poker.dealer] | dealer.py: line 304 - Player 1 won 0
+2026-03-26 15:23:45,043 | INFO [poker.dealer] | dealer.py: line 358 - Player 1 finished game with 46
+2026-03-26 15:23:45,043 | INFO [poker.dealer] | dealer.py: line 358 - Player 2 finished game with 42
+2026-10-14 00:16:47,688 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-10-14 00:16:48,078 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-10-14 00:16:48,079 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-10-14 00:16:48,079 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-10-14 00:16:48,079 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-10-14 00:17:06,627 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-10-14 00:17:07,004 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-10-14 00:17:07,004 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-10-14 00:17:07,004 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-10-14 00:17:07,004 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-10-14 00:17:17,627 | INFO [poker.dealer] | dealer.py: line 23 - Initializing dealer with big blind: 2 and no. players: 2
+2026-10-14 00:17:19,286 | INFO [poker.dealer] | dealer.py: line 295 - 1 placed bet of 1, remaining money: 399
+2026-10-14 00:17:19,287 | INFO [poker.dealer] | dealer.py: line 295 - 2 placed bet of 2, remaining money: 398
+2026-10-14 00:17:19,287 | INFO [poker.dealer] | dealer.py: line 115 - Dealing preflop cards
+2026-10-14 00:17:19,287 | INFO [poker.dealer] | dealer.py: line 119 - 1 received cards: 2 of D, Q of C
+2026-10-14 00:17:19,287 | INFO [poker.dealer] | dealer.py: line 119 - 2 received cards: 8 of S, 7 of C
+2026-10-14 00:17:31,488 | INFO [poker.dealer] | dealer.py: line 90 - 1 called with amount: 2
+2026-10-14 00:17:31,488 | INFO [poker.dealer] | dealer.py: line 295 - 1 placed bet of 1, remaining money: 398
+2026-10-14 00:17:31,489 | INFO [__main__] | main.py: line 613 - Player 1 called 1. History: 1 CALL 1
+2026-10-14 00:17:34,328 | INFO [poker.dealer] | dealer.py: line 90 - 2 called with amount: 2
+2026-10-14 00:17:34,328 | INFO [poker.dealer] | dealer.py: line 295 - 2 placed bet of 0, remaining money: 398
+2026-10-14 00:17:34,328 | INFO [__main__] | main.py: line 579 - Player 2 checked. History: 1 CALL 1 → 2 CALL 2
+2026-10-14 00:17:34,328 | INFO [poker.dealer] | dealer.py: line 126 - Dealing flop cards
+2026-10-14 00:17:35,488 | INFO [poker.dealer] | dealer.py: line 90 - 1 called with amount: 0
+2026-10-14 00:17:35,488 | INFO [poker.dealer] | dealer.py: line 295 - 1 placed bet of 0, remaining money: 398
+2026-10-14 00:17:35,488 | INFO [__main__] | main.py: line 579 - Player 1 checked. History: 1 CALL 1 → 2 CALL 2 → 1 CALL
+2026-10-14 00:17:35,913 | INFO [poker.dealer] | dealer.py: line 90 - 2 called with amount: 0
+2026-10-14 00:17:35,913 | INFO [poker.dealer] | dealer.py: line 295 - 2 placed bet of 0, remaining money: 398
+2026-10-14 00:17:35,913 | INFO [__main__] | main.py: line 579 - Player 2 checked. History: 1 CALL 1 → 2 CALL 2 → 1 CALL → 2 CALL
+2026-10-14 00:17:37,146 | INFO [poker.dealer] | dealer.py: line 90 - 1 called with amount: 0
+2026-10-14 00:17:37,146 | INFO [poker.dealer] | dealer.py: line 295 - 1 placed bet of 0, remaining money: 398
+2026-10-14 00:17:37,146 | INFO [__main__] | main.py: line 579 - Player 1 checked. History: 1 CALL 1 → 2 CALL 2 → 1 CALL → 2 CALL → 1 CALL
+2026-10-14 00:17:37,589 | INFO [poker.dealer] | dealer.py: line 90 - 2 called with amount: 0
+2026-10-14 00:17:37,589 | INFO [poker.dealer] | dealer.py: line 295 - 2 placed bet of 0, remaining money: 398
+2026-10-14 00:17:37,589 | INFO [__main__] | main.py: line 579 - Player 2 checked. History: 1 CALL 1 → 2 CALL 2 → 1 CALL → 2 CALL → 1 CALL → 2 CALL
+2026-10-14 00:17:38,182 | INFO [poker.dealer] | dealer.py: line 90 - 1 called with amount: 0
+2026-10-14 00:17:38,182 | INFO [poker.dealer] | dealer.py: line 295 - 1 placed bet of 0, remaining money: 398
+2026-10-14 00:17:38,182 | INFO [__main__] | main.py: line 579 - Player 1 checked. History: 1 CALL 1 → 2 CALL 2 → 1 CALL → 2 CALL → 1 CALL → 2 CALL → 1 CALL
+2026-10-14 00:17:38,693 | INFO [poker.dealer] | dealer.py: line 90 - 2 called with amount: 0
+2026-10-14 00:17:38,693 | INFO [poker.dealer] | dealer.py: line 295 - 2 placed bet of 0, remaining money: 398
+2026-10-14 00:17:38,693 | INFO [__main__] | main.py: line 579 - Player 2 checked. History: 1 CALL 1 → 2 CALL 2 → 1 CALL → 2 CALL → 1 CALL → 2 CALL → 1 CALL → 2 CALL
+2026-10-14 00:17:38,697 | INFO [poker.poker_logic] | poker_logic.py: line 19 - starting showdown
+2026-10-14 00:17:38,697 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-10-14 00:17:38,698 | INFO [poker.poker_logic] | poker_logic.py: line 284 - one pair
+2026-10-14 00:17:38,698 | INFO [poker.poker_logic] | poker_logic.py: line 331 - starting tie break
+2026-10-14 00:17:38,698 | INFO [poker.dealer] | dealer.py: line 304 - 1 won 4
+2026-10-14 00:17:38,698 | INFO [poker.dealer] | dealer.py: line 304 - 1 won 0
+2026-10-14 00:17:38,698 | INFO [poker.dealer] | dealer.py: line 358 - 1 finished game with 402
+2026-10-14 00:17:38,698 | INFO [poker.dealer] | dealer.py: line 358 - 2 finished game with 398

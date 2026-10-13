@@ -17,10 +17,8 @@ def card_to_index(card: Card) -> int: # Maps a Card to an index from 0 to 51
     suits = [Suit.SPADES, Suit.HEARTS, Suit.DIAMONDS, Suit.CLUBS]
     return ranks.index(card.rank) * 4 + suits.index(card.suit)
 
-def onehot_hand(hand: Collection[Card]) -> NDArray[np.float64]:
-        '''
-        A 1D array of length 364 representing the one-hot encoding of a poker hand.
-        '''
+def onehot_hand(hand: Collection[Card]) -> NDArray[np.float64]:  # A 1D array of length 364 representing the one-hot encoding of a poker hand.
+  
         num_slots = 7
         vec = np.zeros(num_slots * 52, dtype=np.float64)
         for i, card in enumerate(hand):

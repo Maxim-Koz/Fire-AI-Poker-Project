@@ -1,0 +1,39 @@
+2026-03-23 19:23:48,114 | INFO [hand_eval_model] | ml_test.py: line 30 - AS, KD
+2026-03-23 19:23:48,115 | INFO [hand_eval_model] | ml_test.py: line 31 -   Probability: 0.853483
+2026-03-23 19:24:17,026 | INFO [hand_eval_model] | ml_test.py: line 30 - AS, KD
+2026-03-23 19:24:17,026 | INFO [hand_eval_model] | ml_test.py: line 31 -   Probability: 0.853483
+2026-03-23 19:24:57,505 | INFO [hand_eval_model] | ml_test.py: line 30 - AS, KS
+2026-03-23 19:24:57,505 | INFO [hand_eval_model] | ml_test.py: line 31 -   Probability: 0.896700
+2026-03-23 19:25:59,209 | INFO [hand_eval_model] | ml_test.py: line 30 - AS, 9D
+2026-03-23 19:25:59,209 | INFO [hand_eval_model] | ml_test.py: line 31 -   Probability: 0.622197
+2026-03-23 19:27:34,940 | INFO [hand_eval_model] | ml_test.py: line 30 - QH, 8S
+2026-03-23 19:27:34,940 | INFO [hand_eval_model] | ml_test.py: line 31 -   Probability: 0.535129
+2026-03-23 19:34:16,226 | INFO [hand_eval_model] | ml_test.py: line 30 - 7D, 3C
+2026-03-23 19:34:16,226 | INFO [hand_eval_model] | ml_test.py: line 31 -   Probability: 0.243475
+2026-03-23 19:45:14,236 | INFO [hand_eval_model] | ml_test.py: line 30 - AS, KS
+2026-03-23 19:45:14,236 | INFO [hand_eval_model] | ml_test.py: line 31 -   Probability: 0.703965
+2026-03-24 11:48:10,315 | INFO [hand_eval_model] | ml_test.py: line 30 - KS, AS
+2026-03-24 11:48:10,316 | INFO [hand_eval_model] | ml_test.py: line 31 -   Probability: 0.684186
+2026-03-24 11:49:53,063 | INFO [hand_eval_model] | ml_test.py: line 30 - 7D, 3C
+2026-03-24 11:49:53,063 | INFO [hand_eval_model] | ml_test.py: line 31 -   Probability: 0.243475
+2026-03-24 14:58:50,822 | INFO [hand_eval_model] | ml_test.py: line 40 - Testing prediction time for 1000 hands...
+2026-03-24 15:00:18,366 | INFO [hand_eval_model] | ml_test.py: line 65 - Completed 1000 predictions
+2026-03-24 15:00:18,366 | INFO [hand_eval_model] | ml_test.py: line 66 - Total time: 87.5205 seconds
+2026-03-24 15:00:18,367 | INFO [hand_eval_model] | ml_test.py: line 67 - Average time per prediction: 87.5205 ms
+2026-03-24 15:03:10,517 | INFO [hand_eval_model] | ml_test.py: line 40 - Testing prediction time for 1000 hands...
+2026-03-24 15:04:13,265 | INFO [hand_eval_model] | ml_test.py: line 66 - Completed 1000 predictions
+2026-03-24 15:04:13,266 | INFO [hand_eval_model] | ml_test.py: line 67 - Total time: 62.7425 seconds
+2026-03-24 15:04:13,266 | INFO [hand_eval_model] | ml_test.py: line 68 - Average time per prediction: 62.7425 ms
+2026-03-24 15:05:27,308 | INFO [hand_eval_model] | ml_test.py: line 40 - Testing prediction time for 1000 hands...
+2026-03-24 15:06:57,185 | INFO [hand_eval_model] | ml_test.py: line 71 - Completed 1000 predictions
+2026-03-24 15:06:57,185 | INFO [hand_eval_model] | ml_test.py: line 72 - Total time: 89866.9099 seconds
+2026-03-24 15:06:57,186 | INFO [hand_eval_model] | ml_test.py: line 73 - Average time per prediction: 89.8669 ms
+2026-03-24 15:06:57,186 | INFO [hand_eval_model] | ml_test.py: line 74 - Min time: 54.2596 ms
+2026-03-24 15:06:57,186 | INFO [hand_eval_model] | ml_test.py: line 75 - Max time: 263.6240 ms
+2026-03-24 15:09:11,046 | INFO [hand_eval_model] | ml_test.py: line 39 - Testing prediction time for 1000 hands using model profiling...
+2026-03-24 15:10:32,153 | WARNING [hand_eval_model] | ml_test.py: line 88 - No timing data collected from profiler
+2026-03-24 15:11:52,585 | INFO [hand_eval_model] | ml_test.py: line 39 - Testing prediction time for 1000 hands using model profiling...
+2026-03-24 15:19:46,205 | INFO [hand_eval_model] | ml_test.py: line 39 - Testing prediction time for 100 hands using model...
+2026-03-24 15:19:46,364 | INFO [hand_eval_model] | ml_test.py: line 83 - Completed 100 predictions
+2026-03-24 15:19:46,364 | INFO [hand_eval_model] | ml_test.py: line 84 - Total time: 157.2918 ms
+2026-03-24 15:19:46,364 | INFO [hand_eval_model] | ml_test.py: line 85 - Average time per prediction: 1.5729 ms
