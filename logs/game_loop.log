@@ -948,3 +948,8 @@
 2026-10-14 00:27:30,509 | INFO [poker.dealer] | dealer.py: line 304 - You won 0
 2026-10-14 00:27:30,509 | INFO [poker.dealer] | dealer.py: line 358 - You finished game with 46344
 2026-10-14 00:27:30,509 | INFO [poker.dealer] | dealer.py: line 358 - Bot finished game with 324
+2026-10-14 00:37:15,919 | DEBUG [tensorflow] | tpu_cluster_resolver.py: line 34 - Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-10-14 00:37:16,324 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-10-14 00:37:16,324 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
+2026-10-14 00:37:16,324 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 7 to 5
+2026-10-14 00:37:16,325 | DEBUG [h5py._conv] | __init__.py: line 47 - Creating converter from 5 to 7
