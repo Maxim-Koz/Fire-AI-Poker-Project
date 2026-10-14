@@ -34,7 +34,9 @@ This project taught me how to lay out projects, the usefulness of mypy and log f
 
 ## Screenshots
 
-<img src="https://github.com/antz22/MedCheck/blob/master/assets/medcheck.png" width="300"> <img src="https://github.com/antz22/MedCheck/blob/master/assets/home.png" width="300">
-<img src="https://github.com/antz22/MedCheck/blob/master/assets/logs.png" width="300"> <img src="https://github.com/antz22/MedCheck/blob/master/assets/diagnosis.png" width="300">
+<img src="assets/Screenshots/Screenshot1.png" alt="Poker" width="300"> &nbsp; &nbsp; <img src="assets/Screenshots/Screenshot2.png" alt="Poker" width="300">
 
+<img src="assets/Screenshots/Screenshot3.png" alt="Poker" width="300"> &nbsp; &nbsp; <img src="assets/Screenshots/Screenshot4.png" alt="Poker" width="300">
+
+<img src="assets/Screenshots/Screenshot5.png" alt="Poker" width="300">
 :)
