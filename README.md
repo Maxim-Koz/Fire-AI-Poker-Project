@@ -17,11 +17,11 @@ A Python poker game where you can play heads-up (1v1) against a friend or agains
 - TensorFlow / Keras (AI)
 - mypy (static type checking)
 
-## Getting Started
+## Try it out
 
 ```bash
-git clone <your-repo-url>
-cd <repo-name>
+git clone https://github.com/Maxim-Koz/Fire-AI-Poker-Project
+cd Fire-AI-Poker-Project
 pip install -r requirements.txt
 python main.py
 ```
@@ -51,3 +51,5 @@ How to structure a larger project, the value of mypy and log files, better git h
 <img src="assets/Screenshots/Screenshot2.png" alt="Poker" width="450"> &nbsp; <img src="assets/Screenshots/Screenshot3.png" alt="Poker" width="450">
 
 <img src="assets/Screenshots/Screenshot4.png" alt="Poker" width="450"> &nbsp; <img src="assets/Screenshots/Screenshot5.png" alt="Poker" width="450">
+
+:)
